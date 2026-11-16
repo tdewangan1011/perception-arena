@@ -1,0 +1,466 @@
+[
+  {
+    "id": "pitch-01",
+    "task": "pitch",
+    "difficulty": "Close",
+    "waveform": "Sine",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 235.0,
+        "dbfs": -26.5
+      },
+      {
+        "hz": 237.46,
+        "dbfs": -21.5
+      }
+    ],
+    "tones": [
+      {
+        "hz": 235,
+        "dbfs": -26.5
+      },
+      {
+        "hz": 237.46,
+        "dbfs": -21.5
+      }
+    ],
+    "conflicting": false
+  },
+  {
+    "id": "pitch-02",
+    "task": "pitch",
+    "difficulty": "Close",
+    "waveform": "Harmonic complex",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 424.98,
+        "dbfs": -26.5
+      },
+      {
+        "hz": 419.4,
+        "dbfs": -21.5
+      }
+    ],
+    "tones": [
+      {
+        "hz": 425,
+        "dbfs": -26.5
+      },
+      {
+        "hz": 419.39,
+        "dbfs": -21.5
+      }
+    ],
+    "conflicting": true
+  },
+  {
+    "id": "pitch-03",
+    "task": "pitch",
+    "difficulty": "Close",
+    "waveform": "Harmonic complex",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 320.0,
+        "dbfs": -21.5
+      },
+      {
+        "hz": 324.85,
+        "dbfs": -26.5
+      }
+    ],
+    "tones": [
+      {
+        "hz": 320,
+        "dbfs": -21.5
+      },
+      {
+        "hz": 324.84,
+        "dbfs": -26.5
+      }
+    ],
+    "conflicting": true
+  },
+  {
+    "id": "pitch-04",
+    "task": "pitch",
+    "difficulty": "Close",
+    "waveform": "Sine",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 570.01,
+        "dbfs": -21.5
+      },
+      {
+        "hz": 563.79,
+        "dbfs": -26.5
+      }
+    ],
+    "tones": [
+      {
+        "hz": 570,
+        "dbfs": -21.5
+      },
+      {
+        "hz": 563.78,
+        "dbfs": -26.5
+      }
+    ],
+    "conflicting": false
+  },
+  {
+    "id": "pitch-05",
+    "task": "pitch",
+    "difficulty": "Wider",
+    "waveform": "Sine",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 210.0,
+        "dbfs": -26.0
+      },
+      {
+        "hz": 192.57,
+        "dbfs": -22.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 210,
+        "dbfs": -26.0
+      },
+      {
+        "hz": 192.57,
+        "dbfs": -22.0
+      }
+    ],
+    "conflicting": true
+  },
+  {
+    "id": "pitch-06",
+    "task": "pitch",
+    "difficulty": "Wider",
+    "waveform": "Harmonic complex",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 440.02,
+        "dbfs": -26.0
+      },
+      {
+        "hz": 474.28,
+        "dbfs": -22.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 440,
+        "dbfs": -26.0
+      },
+      {
+        "hz": 474.31,
+        "dbfs": -22.0
+      }
+    ],
+    "conflicting": false
+  },
+  {
+    "id": "pitch-07",
+    "task": "pitch",
+    "difficulty": "Wider",
+    "waveform": "Harmonic complex",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 270.0,
+        "dbfs": -22.0
+      },
+      {
+        "hz": 255.58,
+        "dbfs": -26.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 270,
+        "dbfs": -22.0
+      },
+      {
+        "hz": 255.58,
+        "dbfs": -26.0
+      }
+    ],
+    "conflicting": false
+  },
+  {
+    "id": "pitch-08",
+    "task": "pitch",
+    "difficulty": "Wider",
+    "waveform": "Sine",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 619.98,
+        "dbfs": -22.0
+      },
+      {
+        "hz": 660.7,
+        "dbfs": -26.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 620,
+        "dbfs": -22.0
+      },
+      {
+        "hz": 660.67,
+        "dbfs": -26.0
+      }
+    ],
+    "conflicting": true
+  },
+  {
+    "id": "loudness-01",
+    "task": "loudness",
+    "difficulty": "Close",
+    "waveform": "Sine",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 260.0,
+        "dbfs": -24.7
+      },
+      {
+        "hz": 235.0,
+        "dbfs": -23.3
+      }
+    ],
+    "tones": [
+      {
+        "hz": 260,
+        "dbfs": -24.7
+      },
+      {
+        "hz": 235.0,
+        "dbfs": -23.3
+      }
+    ],
+    "conflicting": true
+  },
+  {
+    "id": "loudness-02",
+    "task": "loudness",
+    "difficulty": "Close",
+    "waveform": "Harmonic complex",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 364.99,
+        "dbfs": -23.25
+      },
+      {
+        "hz": 340.56,
+        "dbfs": -24.75
+      }
+    ],
+    "tones": [
+      {
+        "hz": 365,
+        "dbfs": -23.25
+      },
+      {
+        "hz": 340.56,
+        "dbfs": -24.75
+      }
+    ],
+    "conflicting": false
+  },
+  {
+    "id": "loudness-03",
+    "task": "loudness",
+    "difficulty": "Close",
+    "waveform": "Harmonic complex",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 525.01,
+        "dbfs": -24.8
+      },
+      {
+        "hz": 575.77,
+        "dbfs": -23.2
+      }
+    ],
+    "tones": [
+      {
+        "hz": 525,
+        "dbfs": -24.8
+      },
+      {
+        "hz": 575.83,
+        "dbfs": -23.2
+      }
+    ],
+    "conflicting": false
+  },
+  {
+    "id": "loudness-04",
+    "task": "loudness",
+    "difficulty": "Close",
+    "waveform": "Sine",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 300.0,
+        "dbfs": -23.3
+      },
+      {
+        "hz": 326.21,
+        "dbfs": -24.7
+      }
+    ],
+    "tones": [
+      {
+        "hz": 300,
+        "dbfs": -23.3
+      },
+      {
+        "hz": 326.21,
+        "dbfs": -24.7
+      }
+    ],
+    "conflicting": true
+  },
+  {
+    "id": "loudness-05",
+    "task": "loudness",
+    "difficulty": "Wider",
+    "waveform": "Sine",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 340.0,
+        "dbfs": -21.5
+      },
+      {
+        "hz": 377.26,
+        "dbfs": -26.5
+      }
+    ],
+    "tones": [
+      {
+        "hz": 340,
+        "dbfs": -21.5
+      },
+      {
+        "hz": 377.25,
+        "dbfs": -26.5
+      }
+    ],
+    "conflicting": true
+  },
+  {
+    "id": "loudness-06",
+    "task": "loudness",
+    "difficulty": "Wider",
+    "waveform": "Harmonic complex",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 410.0,
+        "dbfs": -26.5
+      },
+      {
+        "hz": 445.81,
+        "dbfs": -21.5
+      }
+    ],
+    "tones": [
+      {
+        "hz": 410,
+        "dbfs": -26.5
+      },
+      {
+        "hz": 445.82,
+        "dbfs": -21.5
+      }
+    ],
+    "conflicting": false
+  },
+  {
+    "id": "loudness-07",
+    "task": "loudness",
+    "difficulty": "Wider",
+    "waveform": "Harmonic complex",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 489.97,
+        "dbfs": -21.5
+      },
+      {
+        "hz": 444.18,
+        "dbfs": -26.5
+      }
+    ],
+    "tones": [
+      {
+        "hz": 490,
+        "dbfs": -21.5
+      },
+      {
+        "hz": 444.17,
+        "dbfs": -26.5
+      }
+    ],
+    "conflicting": false
+  },
+  {
+    "id": "loudness-08",
+    "task": "loudness",
+    "difficulty": "Wider",
+    "waveform": "Sine",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 579.99,
+        "dbfs": -26.5
+      },
+      {
+        "hz": 531.87,
+        "dbfs": -21.5
+      }
+    ],
+    "tones": [
+      {
+        "hz": 580,
+        "dbfs": -26.5
+      },
+      {
+        "hz": 531.86,
+        "dbfs": -21.5
+      }
+    ],
+    "conflicting": true
+  }
+]

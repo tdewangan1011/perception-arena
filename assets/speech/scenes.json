@@ -1,0 +1,108 @@
+{
+  "choices": [
+    "go",
+    "no",
+    "down",
+    "wow"
+  ],
+  "source": "https://huggingface.co/datasets/google/speech_commands",
+  "practiceSource": "yes/c6ee87a7_nohash_0.wav",
+  "trials": [
+    {
+      "id": "clip-01",
+      "answer": "go",
+      "snr": 15,
+      "source": "go/c24d96eb_nohash_0.wav"
+    },
+    {
+      "id": "clip-02",
+      "answer": "no",
+      "snr": 15,
+      "source": "no/7fd25f7c_nohash_0.wav"
+    },
+    {
+      "id": "clip-03",
+      "answer": "down",
+      "snr": 15,
+      "source": "down/bdee441c_nohash_2.wav"
+    },
+    {
+      "id": "clip-04",
+      "answer": "wow",
+      "snr": 15,
+      "source": "wow/f84762e5_nohash_0.wav"
+    },
+    {
+      "id": "clip-05",
+      "answer": "go",
+      "snr": 8,
+      "source": "go/2ce7534c_nohash_0.wav"
+    },
+    {
+      "id": "clip-06",
+      "answer": "no",
+      "snr": 8,
+      "source": "no/6071a214_nohash_0.wav"
+    },
+    {
+      "id": "clip-07",
+      "answer": "down",
+      "snr": 8,
+      "source": "down/dca2797e_nohash_1.wav"
+    },
+    {
+      "id": "clip-08",
+      "answer": "wow",
+      "snr": 8,
+      "source": "wow/44c201dd_nohash_0.wav"
+    },
+    {
+      "id": "clip-09",
+      "answer": "go",
+      "snr": 0,
+      "source": "go/ae927455_nohash_2.wav"
+    },
+    {
+      "id": "clip-10",
+      "answer": "no",
+      "snr": 0,
+      "source": "no/7c1d8533_nohash_4.wav"
+    },
+    {
+      "id": "clip-11",
+      "answer": "down",
+      "snr": 0,
+      "source": "down/48bfde8e_nohash_0.wav"
+    },
+    {
+      "id": "clip-12",
+      "answer": "wow",
+      "snr": 0,
+      "source": "wow/7be5a0f3_nohash_0.wav"
+    },
+    {
+      "id": "clip-13",
+      "answer": "go",
+      "snr": -8,
+      "source": "go/e54a0f16_nohash_0.wav"
+    },
+    {
+      "id": "clip-14",
+      "answer": "no",
+      "snr": -8,
+      "source": "no/439c84f4_nohash_2.wav"
+    },
+    {
+      "id": "clip-15",
+      "answer": "down",
+      "snr": -8,
+      "source": "down/c842b5e4_nohash_0.wav"
+    },
+    {
+      "id": "clip-16",
+      "answer": "wow",
+      "snr": -8,
+      "source": "wow/29b81b73_nohash_0.wav"
+    }
+  ]
+}

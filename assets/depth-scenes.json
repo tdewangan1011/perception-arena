@@ -1,0 +1,624 @@
+[
+  {
+    "id": "layered-00",
+    "name": "Shop window",
+    "prompt": "Which marked surface is closer to the camera?",
+    "points": {
+      "A": [
+        55.474,
+        67.523
+      ],
+      "B": [
+        38.507,
+        66.505
+      ]
+    },
+    "answer": "A",
+    "cue": "Transparent surfaces",
+    "explanation": "The near point lies on the dark window frame; the other point is on the display behind the pane.",
+    "guides": [
+      {
+        "box": [
+          53.0,
+          65.0,
+          5,
+          5
+        ]
+      },
+      {
+        "box": [
+          36.0,
+          64.0,
+          5,
+          5
+        ]
+      }
+    ],
+    "difficulty": "expert",
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 0,
+      "image_key": "000000004",
+      "license": "CC0 1.0",
+      "original_size": [
+        3024,
+        4032
+      ],
+      "annotation": "layer_all.pairs",
+      "annotation_index": 2465,
+      "near_point": [
+        1729,
+        2718,
+        1
+      ],
+      "far_point": [
+        1046,
+        2677,
+        3
+      ]
+    }
+  },
+  {
+    "id": "layered-05",
+    "name": "Glass display case",
+    "prompt": "Which marked surface is closer to the camera?",
+    "points": {
+      "A": [
+        22.547,
+        37.367
+      ],
+      "B": [
+        37.66,
+        36.193
+      ]
+    },
+    "answer": "B",
+    "cue": "Reflection and overlap",
+    "explanation": "The front of the case projects out in front of the wall alongside it. Reflections can make the face of the case look like part of the background.",
+    "guides": [
+      {
+        "box": [
+          20.0,
+          34.9,
+          5,
+          5
+        ]
+      },
+      {
+        "box": [
+          35.2,
+          33.7,
+          5,
+          5
+        ]
+      }
+    ],
+    "difficulty": "expert",
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 5,
+      "image_key": "000000029",
+      "license": "CC0 1.0",
+      "original_size": [
+        2048,
+        1536
+      ],
+      "annotation": "layer_all.pairs",
+      "annotation_index": 660,
+      "near_point": [
+        770,
+        484,
+        1
+      ],
+      "far_point": [
+        461,
+        508,
+        1
+      ]
+    }
+  },
+  {
+    "id": "layered-09",
+    "name": "Cluttered tabletop",
+    "prompt": "Which marked surface is closer to the camera?",
+    "points": {
+      "A": [
+        30.631,
+        31.194
+      ],
+      "B": [
+        32.797,
+        22.832
+      ]
+    },
+    "answer": "A",
+    "cue": "Transparent containers",
+    "explanation": "The near mark sits on the foreground container. Follow its base on the table relative to the glass behind it instead of judging their heights in the photo.",
+    "guides": [
+      {
+        "box": [
+          28.1,
+          28.7,
+          5,
+          5
+        ]
+      },
+      {
+        "box": [
+          30.3,
+          20.3,
+          5,
+          5
+        ]
+      }
+    ],
+    "difficulty": "expert",
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 9,
+      "image_key": "000000049",
+      "license": "CC0 1.0",
+      "original_size": [
+        3468,
+        4624
+      ],
+      "annotation": "layer_all.pairs",
+      "annotation_index": 568,
+      "near_point": [
+        836,
+        1440,
+        1
+      ],
+      "far_point": [
+        936,
+        1054,
+        1
+      ]
+    }
+  },
+  {
+    "id": "layered-06",
+    "name": "Open window",
+    "prompt": "Which marked surface is closer to the camera?",
+    "points": {
+      "A": [
+        40.3,
+        53.4
+      ],
+      "B": [
+        55.6,
+        54.1
+      ]
+    },
+    "answer": "A",
+    "cue": "Oblique viewing angle",
+    "explanation": "A marks the foreground sash. B is on the porch tile seen past it. The tilted frame crosses the same part of the image as the tile.",
+    "guides": [
+      {
+        "box": [
+          37.8,
+          50.9,
+          5,
+          5
+        ]
+      },
+      {
+        "box": [
+          53.1,
+          51.6,
+          5,
+          5
+        ]
+      }
+    ],
+    "difficulty": "expert",
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 6,
+      "image_key": "000000034",
+      "license": "CC0 1.0",
+      "original_size": [
+        3024,
+        4032
+      ],
+      "annotation": "manual surface ordering from scene geometry"
+    }
+  },
+  {
+    "id": "layered-07",
+    "name": "Open glass cabinet",
+    "prompt": "Which marked surface is closer to the camera?",
+    "points": {
+      "A": [
+        39,
+        41.4
+      ],
+      "B": [
+        60.4,
+        41.4
+      ]
+    },
+    "answer": "B",
+    "cue": "Overlapping planes",
+    "explanation": "The wooden rim of the open door extends toward the camera. The blue container remains farther in, on a shelf behind the hinge.",
+    "guides": [
+      {
+        "box": [
+          36.5,
+          38.9,
+          5,
+          5
+        ]
+      },
+      {
+        "box": [
+          57.9,
+          38.9,
+          5,
+          5
+        ]
+      }
+    ],
+    "difficulty": "expert",
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 7,
+      "image_key": "000000039",
+      "license": "CC0 1.0",
+      "original_size": [
+        3024,
+        4032
+      ],
+      "annotation": "manual surface ordering from scene geometry"
+    }
+  },
+  {
+    "id": "layered-08",
+    "name": "Bakery display",
+    "prompt": "Which marked surface is closer to the camera?",
+    "points": {
+      "A": [
+        21.7,
+        66.1
+      ],
+      "B": [
+        33.7,
+        66.4
+      ]
+    },
+    "answer": "B",
+    "cue": "Thin foreground edge",
+    "explanation": "The black front edge of the case is closer than the item on the tray seen through the glass.",
+    "guides": [
+      {
+        "box": [
+          19.2,
+          63.6,
+          5,
+          5
+        ]
+      },
+      {
+        "box": [
+          31.2,
+          63.9,
+          5,
+          5
+        ]
+      }
+    ],
+    "difficulty": "expert",
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 8,
+      "image_key": "000000044",
+      "license": "CC0 1.0",
+      "original_size": [
+        586,
+        601
+      ],
+      "annotation": "manual surface ordering from scene geometry"
+    }
+  },
+  {
+    "id": "layered-01",
+    "name": "Glass rim",
+    "prompt": "Which marked part of the glass rim is closer?",
+    "points": {
+      "A": [
+        45.07513,
+        15.52588
+      ],
+      "B": [
+        53.42237,
+        11.68614
+      ]
+    },
+    "answer": "A",
+    "cue": "Front and back of a curved rim",
+    "explanation": "A is on the front arc of the rim. B is on the opposite arc, across the opening.",
+    "difficulty": "expert",
+    "guides": [
+      {
+        "box": [
+          43.08,
+          13.53,
+          4,
+          4
+        ]
+      },
+      {
+        "box": [
+          51.42,
+          9.69,
+          4,
+          4
+        ]
+      }
+    ],
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 1,
+      "image_key": "000000009",
+      "license": "CC0 1.0",
+      "original_size": [
+        1200,
+        1600
+      ],
+      "annotation": "manual surface ordering from scene geometry"
+    }
+  },
+  {
+    "id": "layered-04",
+    "name": "Coffee station",
+    "prompt": "Which marked part of the coffee maker is closer?",
+    "points": {
+      "A": [
+        58.43072,
+        61.76962
+      ],
+      "B": [
+        36.39399,
+        66.11018
+      ]
+    },
+    "answer": "B",
+    "cue": "Transparent surfaces",
+    "explanation": "The carafe sits in front of the machine. Its side is nearer than the water tank set back beside it.",
+    "difficulty": "expert",
+    "guides": [
+      {
+        "box": [
+          56.43,
+          59.77,
+          4,
+          4
+        ]
+      },
+      {
+        "box": [
+          34.39,
+          64.11,
+          4,
+          4
+        ]
+      }
+    ],
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 4,
+      "image_key": "000000024",
+      "license": "CC0 1.0",
+      "original_size": [
+        3120,
+        4160
+      ],
+      "annotation": "manual surface ordering from scene geometry"
+    }
+  },
+  {
+    "id": "layered-10",
+    "name": "Pantry jars",
+    "prompt": "Which marked glass surface is closer?",
+    "points": {
+      "A": [
+        50.08347,
+        53.42237
+      ],
+      "B": [
+        69.11519,
+        48.41402
+      ]
+    },
+    "answer": "A",
+    "cue": "See-through foreground",
+    "explanation": "The mark on the clear jar is on its front glass. The opaque-looking jar at the other mark rests behind it.",
+    "difficulty": "expert",
+    "guides": [
+      {
+        "box": [
+          48.08,
+          51.42,
+          4,
+          4
+        ]
+      },
+      {
+        "box": [
+          67.12,
+          46.41,
+          4,
+          4
+        ]
+      }
+    ],
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 10,
+      "image_key": "000000054",
+      "license": "CC0 1.0",
+      "original_size": [
+        3024,
+        4032
+      ],
+      "annotation": "manual surface ordering from scene geometry"
+    }
+  },
+  {
+    "id": "layered-12",
+    "name": "Reception doorway",
+    "prompt": "Which marked surface is closer to the camera?",
+    "points": {
+      "A": [
+        69.11519,
+        39.89983
+      ],
+      "B": [
+        48.41402,
+        41.73623
+      ]
+    },
+    "answer": "B",
+    "cue": "Glass door and background",
+    "explanation": "The metal pull is attached to the door in front. The wall control is in the reception area behind the door.",
+    "difficulty": "expert",
+    "guides": [
+      {
+        "box": [
+          67.12,
+          37.9,
+          4,
+          4
+        ]
+      },
+      {
+        "box": [
+          46.41,
+          39.74,
+          4,
+          4
+        ]
+      }
+    ],
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 12,
+      "image_key": "000000064",
+      "license": "CC0 1.0",
+      "original_size": [
+        2252,
+        4000
+      ],
+      "annotation": "manual surface ordering from scene geometry"
+    }
+  },
+  {
+    "id": "layered-14",
+    "name": "Takeout container",
+    "prompt": "Which marked part of the lid is closer?",
+    "points": {
+      "A": [
+        46.07679,
+        57.59599
+      ],
+      "B": [
+        46.07679,
+        38.23038
+      ]
+    },
+    "answer": "A",
+    "cue": "Oblique view of a clear lid",
+    "explanation": "The transparent lid recedes across its opening. A is on its front rim, and B is on its rear rim.",
+    "difficulty": "expert",
+    "guides": [
+      {
+        "box": [
+          44.08,
+          55.6,
+          4,
+          4
+        ]
+      },
+      {
+        "box": [
+          44.08,
+          36.23,
+          4,
+          4
+        ]
+      }
+    ],
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 14,
+      "image_key": "000000074",
+      "license": "CC0 1.0",
+      "original_size": [
+        3024,
+        4032
+      ],
+      "annotation": "manual surface ordering from scene geometry"
+    }
+  },
+  {
+    "id": "layered-15",
+    "name": "Shoe organizer",
+    "prompt": "Which marked surface is closer to the camera?",
+    "points": {
+      "A": [
+        57.76294,
+        36.0601
+      ],
+      "B": [
+        62.27045,
+        30.21703
+      ]
+    },
+    "answer": "A",
+    "cue": "Thin foreground surface",
+    "explanation": "A marks the outer fabric just below the white rim. B marks the shoe seam seen through the clear compartment front. The fabric sits outside the compartment in front of the shoe.",
+    "difficulty": "expert",
+    "guides": [
+      {
+        "box": [
+          55.76,
+          34.06,
+          4,
+          4
+        ]
+      },
+      {
+        "box": [
+          60.27,
+          28.22,
+          4,
+          4
+        ]
+      }
+    ],
+    "source": {
+      "dataset": "princeton-vl/LayeredDepth",
+      "split": "validation",
+      "row": 15,
+      "image_key": "000000079",
+      "license": "CC0 1.0",
+      "original_size": [
+        3024,
+        4032
+      ],
+      "annotation": "manual surface ordering from scene geometry"
+    },
+    "selected_model_miss": true
+  }
+]

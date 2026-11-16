@@ -1,0 +1,222 @@
+[
+  {
+    "id": "ebbinghaus-1",
+    "principle": "Ebbinghaus",
+    "prompt": "Are the two teal center circles the same diameter?",
+    "options": [
+      "The two center circles have the same diameter",
+      "The two center circles have different diameters"
+    ],
+    "answer": 0,
+    "explanation": "Left diameter: 60 px. Right diameter: 60 px. The rings can change how large each center appears."
+  },
+  {
+    "id": "ebbinghaus-2",
+    "principle": "Ebbinghaus",
+    "prompt": "Are the two teal center circles the same diameter?",
+    "options": [
+      "The two center circles have the same diameter",
+      "The two center circles have different diameters"
+    ],
+    "answer": 1,
+    "explanation": "Left diameter: 60 px. Right diameter: 52 px. The rings can change how large each center appears."
+  },
+  {
+    "id": "ebbinghaus-3",
+    "principle": "Ebbinghaus",
+    "prompt": "Are the two teal center circles the same diameter?",
+    "options": [
+      "The two center circles have the same diameter",
+      "The two center circles have different diameters"
+    ],
+    "answer": 0,
+    "explanation": "Left diameter: 60 px. Right diameter: 60 px. The rings can change how large each center appears."
+  },
+  {
+    "id": "ebbinghaus-4",
+    "principle": "Ebbinghaus",
+    "prompt": "Are the two teal center circles the same diameter?",
+    "options": [
+      "The two center circles have the same diameter",
+      "The two center circles have different diameters"
+    ],
+    "answer": 1,
+    "explanation": "Left diameter: 60 px. Right diameter: 68 px. The rings can change how large each center appears."
+  },
+  {
+    "id": "muller-lyer-1",
+    "principle": "Müller-Lyer",
+    "prompt": "Are the two teal shafts the same length, excluding the fins?",
+    "options": [
+      "The two horizontal shafts are the same length",
+      "The two horizontal shafts are different lengths"
+    ],
+    "answer": 0,
+    "explanation": "Top shaft: 152 px. Bottom shaft: 152 px. The direction of the fins shifts the apparent length."
+  },
+  {
+    "id": "muller-lyer-2",
+    "principle": "Müller-Lyer",
+    "prompt": "Are the two teal shafts the same length, excluding the fins?",
+    "options": [
+      "The two horizontal shafts are the same length",
+      "The two horizontal shafts are different lengths"
+    ],
+    "answer": 1,
+    "explanation": "Top shaft: 152 px. Bottom shaft: 164 px. The direction of the fins shifts the apparent length."
+  },
+  {
+    "id": "muller-lyer-3",
+    "principle": "Müller-Lyer",
+    "prompt": "Are the two teal shafts the same length, excluding the fins?",
+    "options": [
+      "The two horizontal shafts are the same length",
+      "The two horizontal shafts are different lengths"
+    ],
+    "answer": 1,
+    "explanation": "Top shaft: 152 px. Bottom shaft: 140 px. The direction of the fins shifts the apparent length."
+  },
+  {
+    "id": "muller-lyer-4",
+    "principle": "Müller-Lyer",
+    "prompt": "Are the two teal shafts the same length, excluding the fins?",
+    "options": [
+      "The two horizontal shafts are the same length",
+      "The two horizontal shafts are different lengths"
+    ],
+    "answer": 0,
+    "explanation": "Top shaft: 152 px. Bottom shaft: 152 px. The direction of the fins shifts the apparent length."
+  },
+  {
+    "id": "ponzo-1",
+    "principle": "Ponzo",
+    "prompt": "Are the two teal bars the same length?",
+    "options": [
+      "The two teal bars are the same length",
+      "The two teal bars are different lengths"
+    ],
+    "answer": 1,
+    "explanation": "Top bar: 118 px. Bottom bar: 132 px. Converging rails can make a bar near the narrow end appear longer."
+  },
+  {
+    "id": "ponzo-2",
+    "principle": "Ponzo",
+    "prompt": "Are the two teal bars the same length?",
+    "options": [
+      "The two teal bars are the same length",
+      "The two teal bars are different lengths"
+    ],
+    "answer": 0,
+    "explanation": "Top bar: 118 px. Bottom bar: 118 px. Converging rails can make a bar near the narrow end appear longer."
+  },
+  {
+    "id": "ponzo-3",
+    "principle": "Ponzo",
+    "prompt": "Are the two teal bars the same length?",
+    "options": [
+      "The two teal bars are the same length",
+      "The two teal bars are different lengths"
+    ],
+    "answer": 1,
+    "explanation": "Top bar: 118 px. Bottom bar: 104 px. Converging rails can make a bar near the narrow end appear longer."
+  },
+  {
+    "id": "ponzo-4",
+    "principle": "Ponzo",
+    "prompt": "Are the two teal bars the same length?",
+    "options": [
+      "The two teal bars are the same length",
+      "The two teal bars are different lengths"
+    ],
+    "answer": 0,
+    "explanation": "Top bar: 118 px. Bottom bar: 118 px. Converging rails can make a bar near the narrow end appear longer."
+  },
+  {
+    "id": "horizontal-vertical-1",
+    "principle": "Horizontal–vertical",
+    "prompt": "Is the vertical stroke the same length as the entire horizontal stroke?",
+    "options": [
+      "The horizontal and vertical strokes have the same length",
+      "The horizontal and vertical strokes have different lengths"
+    ],
+    "answer": 0,
+    "explanation": "Horizontal: 144 px. Vertical: 144 px. Orientation and the T junction can bias apparent length."
+  },
+  {
+    "id": "horizontal-vertical-2",
+    "principle": "Horizontal–vertical",
+    "prompt": "Is the vertical stroke the same length as the entire horizontal stroke?",
+    "options": [
+      "The horizontal and vertical strokes have the same length",
+      "The horizontal and vertical strokes have different lengths"
+    ],
+    "answer": 1,
+    "explanation": "Horizontal: 132 px. Vertical: 120 px. Orientation and the T junction can bias apparent length."
+  },
+  {
+    "id": "horizontal-vertical-3",
+    "principle": "Horizontal–vertical",
+    "prompt": "Is the vertical stroke the same length as the entire horizontal stroke?",
+    "options": [
+      "The horizontal and vertical strokes have the same length",
+      "The horizontal and vertical strokes have different lengths"
+    ],
+    "answer": 0,
+    "explanation": "Horizontal: 160 px. Vertical: 160 px. Orientation and the T junction can bias apparent length."
+  },
+  {
+    "id": "horizontal-vertical-4",
+    "principle": "Horizontal–vertical",
+    "prompt": "Is the vertical stroke the same length as the entire horizontal stroke?",
+    "options": [
+      "The horizontal and vertical strokes have the same length",
+      "The horizontal and vertical strokes have different lengths"
+    ],
+    "answer": 1,
+    "explanation": "Horizontal: 150 px. Vertical: 162 px. Orientation and the T junction can bias apparent length."
+  },
+  {
+    "id": "hering-1",
+    "principle": "Hering",
+    "prompt": "Are the two teal lines straight or bowed?",
+    "options": [
+      "The two teal lines are straight",
+      "The two teal lines are bowed"
+    ],
+    "answer": 0,
+    "explanation": "Each line's midpoint shifts 0 px sideways from its endpoints. The radiating lines can make even straight lines look bowed."
+  },
+  {
+    "id": "hering-2",
+    "principle": "Hering",
+    "prompt": "Are the two teal lines straight or bowed?",
+    "options": [
+      "The two teal lines are straight",
+      "The two teal lines are bowed"
+    ],
+    "answer": 1,
+    "explanation": "Each line's midpoint shifts 10 px sideways from its endpoints. The radiating lines can make even straight lines look bowed."
+  },
+  {
+    "id": "hering-3",
+    "principle": "Hering",
+    "prompt": "Are the two teal lines straight or bowed?",
+    "options": [
+      "The two teal lines are straight",
+      "The two teal lines are bowed"
+    ],
+    "answer": 1,
+    "explanation": "Each line's midpoint shifts 10 px sideways from its endpoints. The radiating lines can make even straight lines look bowed."
+  },
+  {
+    "id": "hering-4",
+    "principle": "Hering",
+    "prompt": "Are the two teal lines straight or bowed?",
+    "options": [
+      "The two teal lines are straight",
+      "The two teal lines are bowed"
+    ],
+    "answer": 0,
+    "explanation": "Each line's midpoint shifts 0 px sideways from its endpoints. The radiating lines can make even straight lines look bowed."
+  }
+]

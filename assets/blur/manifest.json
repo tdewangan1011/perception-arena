@@ -1,0 +1,162 @@
+[
+  {
+    "id": "blur-001",
+    "file": "blur-001.jpg",
+    "label": "Bicycle",
+    "title": "Dutch bicycle.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dutch_bicycle.jpg",
+    "artist": "Petar Milo\u0161evi\u0107",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "blur-002",
+    "file": "blur-002.jpg",
+    "label": "Bicycle",
+    "title": "Roadster bicycle (Dutch).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Roadster_bicycle_(Dutch).jpg",
+    "artist": "Petar Milo\u0161evi\u0107",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "blur-003",
+    "file": "blur-003.jpg",
+    "label": "Bicycle",
+    "title": "LACMTA Bike Share electric bicycle - drive side.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:LACMTA_Bike_Share_electric_bicycle_-_drive_side.jpg",
+    "artist": "Facewizard",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "id": "blur-004",
+    "file": "blur-004.jpg",
+    "label": "Bicycle",
+    "title": "Dahon Classic III non drive side bicycle bootiebike com 1000.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dahon_Classic_III_non_drive_side_bicycle_bootiebike_com_1000.jpg",
+    "artist": "Conollyb",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "blur-005",
+    "file": "blur-005.jpg",
+    "label": "Motorcycle",
+    "title": "Honda CB750 Four K1 1971.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Honda_CB750_Four_K1_1971.jpg",
+    "artist": "Khaosaming",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "id": "blur-006",
+    "file": "blur-006.jpg",
+    "label": "Motorcycle",
+    "title": "Honda CB750 (1969) - 15858705015.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Honda_CB750_(1969)_-_15858705015.jpg",
+    "artist": "SG2012",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "id": "blur-007",
+    "file": "blur-007.jpg",
+    "label": "Motorcycle",
+    "title": "2025 Honda CB750 Hornet.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2025_Honda_CB750_Hornet.jpg",
+    "artist": "Chanokchon",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "blur-008",
+    "file": "blur-008.jpg",
+    "label": "Motorcycle",
+    "title": "Honda CB750 Nighthawk red.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Honda_CB750_Nighthawk_red.jpg",
+    "artist": "jon collier",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "id": "blur-009",
+    "file": "blur-009.jpg",
+    "label": "Kick scooter",
+    "title": "Lime Electric Scooter (Lisbon) in 2020.02.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lime_Electric_Scooter_(Lisbon)_in_2020.02.jpg",
+    "artist": "CAPTAIN RAJU",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "blur-010",
+    "file": "blur-010.jpg",
+    "label": "Kick scooter",
+    "title": "Xiaomi M365 Scooter.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Xiaomi_M365_Scooter.jpg",
+    "artist": "Sprucecopse",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "id": "blur-011",
+    "file": "blur-011.jpg",
+    "label": "Kick scooter",
+    "title": "Shared electric kick scooter on the main square of Tomasz\u00f3w Mazowiecki, Poland.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shared_electric_kick_scooter_on_the_main_square_of_Tomasz%C3%B3w_Mazowiecki,_Poland.jpg",
+    "artist": "WrS.tm.pl",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "id": "blur-012",
+    "file": "blur-012.jpg",
+    "label": "Kick scooter",
+    "title": "Lime Scooter in Foggy Bottom, Washington DC.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lime_Scooter_in_Foggy_Bottom,_Washington_DC.jpg",
+    "artist": "OhanaSurf",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "id": "blur-013",
+    "file": "blur-013.jpg",
+    "label": "Wheelchair",
+    "title": "Standard rollstuhl.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Standard_rollstuhl.jpg",
+    "artist": "de:User:Bestrossi",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "id": "blur-014",
+    "file": "blur-014.jpg",
+    "label": "Wheelchair",
+    "title": "Wheelchairs at an Emergency Department.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Wheelchairs_at_an_Emergency_Department.jpg",
+    "artist": "MarkBuckawicki",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "id": "blur-015",
+    "file": "blur-015.jpg",
+    "label": "Wheelchair",
+    "title": "Lightweightwheelchair.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lightweightwheelchair.jpg",
+    "artist": "See original file page",
+    "license": "Public domain",
+    "license_url": ""
+  },
+  {
+    "id": "blur-016",
+    "file": "blur-016.jpg",
+    "label": "Wheelchair",
+    "title": "Stretcher on wheels and a wheelchair in the emergency room of a hospital.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Stretcher_on_wheels_and_a_wheelchair_in_the_emergency_room_of_a_hospital.jpg",
+    "artist": "Newspaper \"Number One\" (photographer Petr Sanzhiev)",
+    "license": "Public domain",
+    "license_url": ""
+  }
+]

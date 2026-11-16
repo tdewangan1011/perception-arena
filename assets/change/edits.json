@@ -1,0 +1,531 @@
+{
+  "photo-01": {
+    "region": 6,
+    "level": 3,
+    "type": "color",
+    "object": "wooden post",
+    "description": "The wooden post in the foreground takes on a blue finish.",
+    "hue": 149,
+    "saturation": 174,
+    "value_factor": 1.4,
+    "polygons": [
+      [
+        [
+          47,
+          473
+        ],
+        [
+          70,
+          472
+        ],
+        [
+          76,
+          596
+        ],
+        [
+          55,
+          596
+        ]
+      ]
+    ]
+  },
+  "photo-02": {
+    "region": 2,
+    "level": 1,
+    "type": "lightness",
+    "object": "wall clock",
+    "description": "The face of the wall clock gets slightly darker.",
+    "value_factor": 0.72,
+    "polygons": [
+      [
+        [
+          570,
+          43
+        ],
+        [
+          582,
+          46
+        ],
+        [
+          586,
+          55
+        ],
+        [
+          584,
+          66
+        ],
+        [
+          578,
+          74
+        ],
+        [
+          569,
+          77
+        ],
+        [
+          560,
+          71
+        ],
+        [
+          557,
+          61
+        ],
+        [
+          560,
+          48
+        ]
+      ]
+    ]
+  },
+  "photo-03": {
+    "region": 6,
+    "level": 1,
+    "type": "color",
+    "object": "book spine",
+    "description": "The orange book spine on the lower-left shelf turns plum.",
+    "hue": 216,
+    "saturation": 138,
+    "polygons": [
+      [
+        [
+          38,
+          443
+        ],
+        [
+          57,
+          439
+        ],
+        [
+          60,
+          482
+        ],
+        [
+          39,
+          486
+        ]
+      ]
+    ]
+  },
+  "photo-04": {
+    "region": 1,
+    "level": 2,
+    "type": "color",
+    "object": "hanging hand strap",
+    "description": "The orange train strap near the ceiling turns teal.",
+    "hue": 126,
+    "saturation": 193,
+    "polygons": [
+      [
+        [
+          248,
+          69
+        ],
+        [
+          258,
+          66
+        ],
+        [
+          260,
+          85
+        ],
+        [
+          266,
+          96
+        ],
+        [
+          268,
+          107
+        ],
+        [
+          262,
+          118
+        ],
+        [
+          250,
+          119
+        ],
+        [
+          243,
+          115
+        ],
+        [
+          241,
+          105
+        ],
+        [
+          243,
+          94
+        ],
+        [
+          249,
+          85
+        ]
+      ]
+    ],
+    "holes": [
+      [
+        [
+          250,
+          94
+        ],
+        [
+          256,
+          89
+        ],
+        [
+          260,
+          98
+        ],
+        [
+          262,
+          108
+        ],
+        [
+          256,
+          112
+        ],
+        [
+          249,
+          112
+        ],
+        [
+          247,
+          106
+        ]
+      ]
+    ]
+  },
+  "photo-05": {
+    "region": 3,
+    "level": 2,
+    "type": "color",
+    "object": "locker doors",
+    "description": "The green locker doors take on a burgundy finish.",
+    "hue": 244,
+    "saturation": 159,
+    "polygons": [
+      [
+        [
+          51,
+          256
+        ],
+        [
+          133,
+          255
+        ],
+        [
+          135,
+          332
+        ],
+        [
+          52,
+          341
+        ]
+      ]
+    ]
+  },
+  "photo-06": {
+    "region": 3,
+    "level": 2,
+    "type": "color",
+    "object": "hanging cloth",
+    "description": "The pale cloth draped over the work surface turns blue.",
+    "hue": 145,
+    "saturation": 113,
+    "polygons": [
+      [
+        [
+          97,
+          288
+        ],
+        [
+          171,
+          280
+        ],
+        [
+          171,
+          318
+        ],
+        [
+          148,
+          326
+        ],
+        [
+          120,
+          331
+        ],
+        [
+          98,
+          334
+        ]
+      ]
+    ]
+  },
+  "photo-07": {
+    "region": 3,
+    "level": 3,
+    "type": "color",
+    "object": "bedside lampshade",
+    "description": "The blue bedside lampshade turns red.",
+    "hue": 1,
+    "saturation": 183,
+    "value_factor": 1.37,
+    "polygons": [
+      [
+        [
+          61,
+          249
+        ],
+        [
+          94,
+          249
+        ],
+        [
+          111,
+          281
+        ],
+        [
+          100,
+          285
+        ],
+        [
+          58,
+          286
+        ],
+        [
+          47,
+          283
+        ]
+      ]
+    ]
+  },
+  "photo-08": {
+    "region": 6,
+    "level": 3,
+    "type": "color",
+    "object": "park bench slats",
+    "description": "The blue bench slats are repainted a warm red.",
+    "hue": 7,
+    "saturation": 179,
+    "value_factor": 1.17,
+    "polygons": [
+      [
+        [
+          72,
+          435
+        ],
+        [
+          134,
+          414
+        ],
+        [
+          137,
+          429
+        ],
+        [
+          75,
+          451
+        ]
+      ],
+      [
+        [
+          75,
+          452
+        ],
+        [
+          137,
+          430
+        ],
+        [
+          138,
+          444
+        ],
+        [
+          78,
+          462
+        ]
+      ],
+      [
+        [
+          99,
+          474
+        ],
+        [
+          171,
+          450
+        ],
+        [
+          184,
+          451
+        ],
+        [
+          184,
+          456
+        ],
+        [
+          112,
+          484
+        ],
+        [
+          98,
+          485
+        ]
+      ]
+    ]
+  },
+  "photo-09": {
+    "region": 8,
+    "level": 1,
+    "type": "lightness",
+    "object": "kiosk display",
+    "description": "The screen on the blue kiosk dims.",
+    "value_factor": 0.73,
+    "polygons": [
+      [
+        [
+          503,
+          470
+        ],
+        [
+          596,
+          469
+        ],
+        [
+          597,
+          529
+        ],
+        [
+          502,
+          530
+        ]
+      ]
+    ]
+  },
+  "photo-10": {
+    "region": 3,
+    "level": 2,
+    "type": "color",
+    "object": "locker terminal display",
+    "description": "The locker terminal display changes to a pink tone.",
+    "hue": 227,
+    "saturation": 120,
+    "polygons": [
+      [
+        [
+          106,
+          257
+        ],
+        [
+          149,
+          257
+        ],
+        [
+          148,
+          292
+        ],
+        [
+          106,
+          292
+        ]
+      ]
+    ]
+  },
+  "photo-11": {
+    "region": 3,
+    "level": 1,
+    "type": "lightness",
+    "object": "exercise machine seat",
+    "description": "The dark seat pad visible in the gym mirror gets lighter.",
+    "value_factor": 1.58,
+    "polygons": [
+      [
+        [
+          79,
+          290
+        ],
+        [
+          111,
+          288
+        ],
+        [
+          121,
+          294
+        ],
+        [
+          122,
+          303
+        ],
+        [
+          116,
+          306
+        ],
+        [
+          82,
+          306
+        ],
+        [
+          74,
+          302
+        ],
+        [
+          74,
+          295
+        ]
+      ]
+    ]
+  },
+  "photo-12": {
+    "region": 3,
+    "level": 3,
+    "type": "color",
+    "object": "ridged flowerpot",
+    "description": "The white plant pot on the left turns blue.",
+    "hue": 151,
+    "saturation": 185,
+    "value_factor": 0.93,
+    "polygons": [
+      [
+        [
+          81,
+          330
+        ],
+        [
+          92,
+          335
+        ],
+        [
+          127,
+          335
+        ],
+        [
+          142,
+          329
+        ],
+        [
+          140,
+          355
+        ],
+        [
+          134,
+          383
+        ],
+        [
+          128,
+          389
+        ],
+        [
+          104,
+          391
+        ],
+        [
+          94,
+          388
+        ],
+        [
+          86,
+          366
+        ]
+      ]
+    ]
+  }
+}

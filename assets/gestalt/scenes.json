@@ -1,0 +1,233 @@
+[
+  {
+    "id": "proximity-1",
+    "principle": "Proximity",
+    "prompt": "Which grouping stands out?",
+    "options": [
+      "Horizontal bands of marks",
+      "Vertical bands of marks"
+    ],
+    "answer": 0,
+    "explanation": "The smaller gaps pull neighboring marks into bands."
+  },
+  {
+    "id": "proximity-2",
+    "principle": "Proximity",
+    "prompt": "Which grouping stands out?",
+    "options": [
+      "Horizontal bands of marks",
+      "Vertical bands of marks"
+    ],
+    "answer": 1,
+    "explanation": "The smaller gaps pull neighboring marks into bands."
+  },
+  {
+    "id": "proximity-3",
+    "principle": "Proximity",
+    "prompt": "Which grouping stands out?",
+    "options": [
+      "Horizontal bands of marks",
+      "Vertical bands of marks"
+    ],
+    "answer": 0,
+    "explanation": "The smaller gaps pull neighboring marks into bands."
+  },
+  {
+    "id": "similarity-1",
+    "principle": "Similarity",
+    "prompt": "Which grouping stands out?",
+    "options": [
+      "Horizontal bands of marks",
+      "Vertical bands of marks"
+    ],
+    "answer": 0,
+    "explanation": "Marks with the same shape or color group together even though the spacing is equal."
+  },
+  {
+    "id": "similarity-2",
+    "principle": "Similarity",
+    "prompt": "Which grouping stands out?",
+    "options": [
+      "Horizontal bands of marks",
+      "Vertical bands of marks"
+    ],
+    "answer": 1,
+    "explanation": "Marks with the same shape or color group together even though the spacing is equal."
+  },
+  {
+    "id": "similarity-3",
+    "principle": "Similarity",
+    "prompt": "Which grouping stands out?",
+    "options": [
+      "Horizontal bands of marks",
+      "Vertical bands of marks"
+    ],
+    "answer": 0,
+    "explanation": "Marks with the same shape or color group together even though the spacing is equal."
+  },
+  {
+    "id": "closure-1",
+    "principle": "Closure",
+    "prompt": "Which outline do the fragments suggest?",
+    "options": [
+      "A circle",
+      "A square"
+    ],
+    "answer": 0,
+    "explanation": "Your visual system can group separated fragments into a closed outline."
+  },
+  {
+    "id": "closure-2",
+    "principle": "Closure",
+    "prompt": "Which outline do the fragments suggest?",
+    "options": [
+      "A diamond",
+      "A triangle"
+    ],
+    "answer": 1,
+    "explanation": "Your visual system can group separated fragments into a closed outline."
+  },
+  {
+    "id": "closure-3",
+    "principle": "Closure",
+    "prompt": "Which outline do the fragments suggest?",
+    "options": [
+      "A diamond",
+      "A circle"
+    ],
+    "answer": 0,
+    "explanation": "Your visual system can group separated fragments into a closed outline."
+  },
+  {
+    "id": "good-continuation-1",
+    "principle": "Good continuation",
+    "prompt": "How do the strokes most naturally connect behind the block?",
+    "options": [
+      "Two straight strokes cross behind the block",
+      "Two strokes change direction sharply and turn away from each other"
+    ],
+    "answer": 0,
+    "explanation": "Following each segment's direction connects it to the aligned segment across the gap."
+  },
+  {
+    "id": "good-continuation-2",
+    "principle": "Good continuation",
+    "prompt": "How do the strokes most naturally connect behind the block?",
+    "options": [
+      "Two strokes change direction sharply and turn away from each other",
+      "Two straight strokes cross behind the block"
+    ],
+    "answer": 1,
+    "explanation": "Following each segment's direction connects it to the aligned segment across the gap."
+  },
+  {
+    "id": "good-continuation-3",
+    "principle": "Good continuation",
+    "prompt": "How do the strokes most naturally connect behind the block?",
+    "options": [
+      "Two smooth curves cross behind the block",
+      "Two strokes change direction sharply and turn away from each other"
+    ],
+    "answer": 0,
+    "explanation": "Following each segment's direction connects it to the aligned segment across the gap."
+  },
+  {
+    "id": "common-region-1",
+    "principle": "Common region",
+    "prompt": "Which grouping do the enclosing outlines support?",
+    "options": [
+      "Horizontal bands of marks",
+      "Vertical bands of marks"
+    ],
+    "answer": 0,
+    "explanation": "The marks inside each shared boundary are grouped together."
+  },
+  {
+    "id": "common-region-2",
+    "principle": "Common region",
+    "prompt": "Which grouping do the enclosing outlines support?",
+    "options": [
+      "Horizontal bands of marks",
+      "Vertical bands of marks"
+    ],
+    "answer": 1,
+    "explanation": "The marks inside each shared boundary are grouped together."
+  },
+  {
+    "id": "common-region-3",
+    "principle": "Common region",
+    "prompt": "Which grouping do the enclosing outlines support?",
+    "options": [
+      "Horizontal bands of marks",
+      "Vertical bands of marks"
+    ],
+    "answer": 0,
+    "explanation": "The marks inside each shared boundary are grouped together."
+  },
+  {
+    "id": "symmetry-1",
+    "principle": "Symmetry",
+    "prompt": "Which line would split this form into mirror halves?",
+    "options": [
+      "A vertical mirror axis",
+      "A horizontal mirror axis"
+    ],
+    "answer": 0,
+    "explanation": "The two halves match across the mirror axis, even though the outline has several bends."
+  },
+  {
+    "id": "symmetry-2",
+    "principle": "Symmetry",
+    "prompt": "Which line would split this form into mirror halves?",
+    "options": [
+      "A vertical mirror axis",
+      "A horizontal mirror axis"
+    ],
+    "answer": 1,
+    "explanation": "The two halves match across the mirror axis, even though the outline has several bends."
+  },
+  {
+    "id": "symmetry-3",
+    "principle": "Symmetry",
+    "prompt": "Which line would split this form into mirror halves?",
+    "options": [
+      "A vertical mirror axis",
+      "A horizontal mirror axis"
+    ],
+    "answer": 0,
+    "explanation": "The two halves match across the mirror axis, even though the outline has several bends."
+  },
+  {
+    "id": "pragnanz-1",
+    "principle": "Prägnanz",
+    "prompt": "Which description gives the more regular organization of the whole?",
+    "options": [
+      "Two overlapping circles",
+      "Three separate crescent and lens shapes"
+    ],
+    "answer": 0,
+    "explanation": "The whole can be organized as overlapping familiar shapes. This illustrates one aspect of Prägnanz."
+  },
+  {
+    "id": "pragnanz-2",
+    "principle": "Prägnanz",
+    "prompt": "Which description gives the more regular organization of the whole?",
+    "options": [
+      "Three separate angular shapes",
+      "Two overlapping squares"
+    ],
+    "answer": 1,
+    "explanation": "The whole can be organized as overlapping familiar shapes. This illustrates one aspect of Prägnanz."
+  },
+  {
+    "id": "pragnanz-3",
+    "principle": "Prägnanz",
+    "prompt": "Which description gives the more regular organization of the whole?",
+    "options": [
+      "A circle overlapping a triangle",
+      "Several separate curved and angular pieces"
+    ],
+    "answer": 0,
+    "explanation": "The whole can be organized as overlapping familiar shapes. This illustrates one aspect of Prägnanz."
+  }
+]

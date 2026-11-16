@@ -1,0 +1,634 @@
+[
+  {
+    "id": "timbre-01",
+    "task": "timbre",
+    "difficulty": "Subtle timbre change",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 220.0,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 220.0,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 220,
+        "dbfs": -24,
+        "harmonics": [
+          0.966,
+          0.232,
+          0.106,
+          0.039,
+          0.019
+        ]
+      },
+      {
+        "hz": 220.0,
+        "dbfs": -24,
+        "harmonics": [
+          0.875,
+          0.394,
+          0.219,
+          0.158,
+          0.079
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-02",
+    "task": "timbre",
+    "difficulty": "Subtle timbre change",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 340.0,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 344.75,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 340,
+        "dbfs": -24,
+        "harmonics": [
+          0.875,
+          0.394,
+          0.219,
+          0.158,
+          0.079
+        ]
+      },
+      {
+        "hz": 344.75,
+        "dbfs": -24,
+        "harmonics": [
+          0.966,
+          0.232,
+          0.106,
+          0.039,
+          0.019
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-03",
+    "task": "timbre",
+    "difficulty": "Subtle timbre change",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 391.98,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 391.99,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 392,
+        "dbfs": -24,
+        "harmonics": [
+          0.875,
+          0.394,
+          0.219,
+          0.158,
+          0.079
+        ]
+      },
+      {
+        "hz": 392.0,
+        "dbfs": -24,
+        "harmonics": [
+          0.966,
+          0.232,
+          0.106,
+          0.039,
+          0.019
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-04",
+    "task": "timbre",
+    "difficulty": "Subtle timbre change",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 276.0,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 271.1,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 276,
+        "dbfs": -24,
+        "harmonics": [
+          0.966,
+          0.232,
+          0.106,
+          0.039,
+          0.019
+        ]
+      },
+      {
+        "hz": 271.1,
+        "dbfs": -24,
+        "harmonics": [
+          0.875,
+          0.394,
+          0.219,
+          0.158,
+          0.079
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-05",
+    "task": "timbre",
+    "difficulty": "Subtle timbre change",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 495.07,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 481.48,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 495,
+        "dbfs": -24,
+        "harmonics": [
+          0.875,
+          0.394,
+          0.219,
+          0.158,
+          0.079
+        ]
+      },
+      {
+        "hz": 481.46,
+        "dbfs": -24,
+        "harmonics": [
+          0.966,
+          0.232,
+          0.106,
+          0.039,
+          0.019
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-06",
+    "task": "timbre",
+    "difficulty": "Subtle timbre change",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 311.0,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 311.0,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 311,
+        "dbfs": -24,
+        "harmonics": [
+          0.966,
+          0.232,
+          0.106,
+          0.039,
+          0.019
+        ]
+      },
+      {
+        "hz": 311.0,
+        "dbfs": -24,
+        "harmonics": [
+          0.875,
+          0.394,
+          0.219,
+          0.158,
+          0.079
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-07",
+    "task": "timbre",
+    "difficulty": "Subtle timbre change",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 261.0,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 269.9,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 261,
+        "dbfs": -24,
+        "harmonics": [
+          0.966,
+          0.232,
+          0.106,
+          0.039,
+          0.019
+        ]
+      },
+      {
+        "hz": 269.89,
+        "dbfs": -24,
+        "harmonics": [
+          0.875,
+          0.394,
+          0.219,
+          0.158,
+          0.079
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-08",
+    "task": "timbre",
+    "difficulty": "Subtle timbre change",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 414.99,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 415.0,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 415,
+        "dbfs": -24,
+        "harmonics": [
+          0.875,
+          0.394,
+          0.219,
+          0.158,
+          0.079
+        ]
+      },
+      {
+        "hz": 415.0,
+        "dbfs": -24,
+        "harmonics": [
+          0.966,
+          0.232,
+          0.106,
+          0.039,
+          0.019
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-09",
+    "task": "timbre",
+    "difficulty": "Strong timbre change",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 196.0,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 196.0,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 196,
+        "dbfs": -24,
+        "harmonics": [
+          1.0
+        ]
+      },
+      {
+        "hz": 196.0,
+        "dbfs": -24,
+        "harmonics": [
+          0.692,
+          0.498,
+          0.374,
+          0.284,
+          0.228
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-10",
+    "task": "timbre",
+    "difficulty": "Strong timbre change",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 294.01,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 298.45,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 294,
+        "dbfs": -24,
+        "harmonics": [
+          0.692,
+          0.498,
+          0.374,
+          0.284,
+          0.228
+        ]
+      },
+      {
+        "hz": 298.45,
+        "dbfs": -24,
+        "harmonics": [
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-11",
+    "task": "timbre",
+    "difficulty": "Strong timbre change",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 370.04,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 370.0,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 370,
+        "dbfs": -24,
+        "harmonics": [
+          0.846,
+          0.0,
+          0.465,
+          0.0,
+          0.262
+        ]
+      },
+      {
+        "hz": 370.0,
+        "dbfs": -24,
+        "harmonics": [
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-12",
+    "task": "timbre",
+    "difficulty": "Strong timbre change",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 262.0,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 256.77,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 262,
+        "dbfs": -24,
+        "harmonics": [
+          1.0
+        ]
+      },
+      {
+        "hz": 256.76,
+        "dbfs": -24,
+        "harmonics": [
+          0.846,
+          0.0,
+          0.465,
+          0.0,
+          0.262
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-13",
+    "task": "timbre",
+    "difficulty": "Strong timbre change",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 440.07,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 440.01,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 440,
+        "dbfs": -24,
+        "harmonics": [
+          0.692,
+          0.498,
+          0.374,
+          0.284,
+          0.228
+        ]
+      },
+      {
+        "hz": 440.0,
+        "dbfs": -24,
+        "harmonics": [
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-14",
+    "task": "timbre",
+    "difficulty": "Strong timbre change",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 329.0,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 339.63,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 329,
+        "dbfs": -24,
+        "harmonics": [
+          1.0
+        ]
+      },
+      {
+        "hz": 339.62,
+        "dbfs": -24,
+        "harmonics": [
+          0.692,
+          0.498,
+          0.374,
+          0.284,
+          0.228
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-15",
+    "task": "timbre",
+    "difficulty": "Strong timbre change",
+    "answer": "A",
+    "estimateAnswer": "A",
+    "estimates": [
+      {
+        "hz": 228.01,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 228.0,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 228,
+        "dbfs": -24,
+        "harmonics": [
+          0.846,
+          0.0,
+          0.465,
+          0.0,
+          0.262
+        ]
+      },
+      {
+        "hz": 228.0,
+        "dbfs": -24,
+        "harmonics": [
+          0.692,
+          0.498,
+          0.374,
+          0.284,
+          0.228
+        ]
+      }
+    ]
+  },
+  {
+    "id": "timbre-16",
+    "task": "timbre",
+    "difficulty": "Strong timbre change",
+    "answer": "B",
+    "estimateAnswer": "B",
+    "estimates": [
+      {
+        "hz": 414.97,
+        "dbfs": -24.0
+      },
+      {
+        "hz": 401.52,
+        "dbfs": -24.0
+      }
+    ],
+    "tones": [
+      {
+        "hz": 415,
+        "dbfs": -24,
+        "harmonics": [
+          0.692,
+          0.498,
+          0.374,
+          0.284,
+          0.228
+        ]
+      },
+      {
+        "hz": 401.56,
+        "dbfs": -24,
+        "harmonics": [
+          0.846,
+          0.0,
+          0.465,
+          0.0,
+          0.262
+        ]
+      }
+    ]
+  }
+]

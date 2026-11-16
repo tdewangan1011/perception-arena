@@ -1,0 +1,450 @@
+[
+  {
+    "id": "hue-1",
+    "principle": "Hue",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 0,
+    "explanation": "The other center shifts slightly in hue while its lightness and chroma are held fixed in the design.",
+    "referenceRgb": [
+      199,
+      138,
+      118
+    ],
+    "candidateRgb": [
+      [
+        199,
+        138,
+        118
+      ],
+      [
+        197,
+        139,
+        114
+      ]
+    ]
+  },
+  {
+    "id": "hue-2",
+    "principle": "Hue",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 1,
+    "explanation": "The other center shifts slightly in hue while its lightness and chroma are held fixed in the design.",
+    "referenceRgb": [
+      109,
+      172,
+      190
+    ],
+    "candidateRgb": [
+      [
+        107,
+        173,
+        185
+      ],
+      [
+        109,
+        172,
+        190
+      ]
+    ]
+  },
+  {
+    "id": "hue-3",
+    "principle": "Hue",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 0,
+    "explanation": "The other center shifts slightly in hue while its lightness and chroma are held fixed in the design.",
+    "referenceRgb": [
+      159,
+      114,
+      161
+    ],
+    "candidateRgb": [
+      [
+        159,
+        114,
+        161
+      ],
+      [
+        165,
+        112,
+        155
+      ]
+    ]
+  },
+  {
+    "id": "hue-4",
+    "principle": "Hue",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 1,
+    "explanation": "The other center shifts slightly in hue while its lightness and chroma are held fixed in the design.",
+    "referenceRgb": [
+      155,
+      175,
+      128
+    ],
+    "candidateRgb": [
+      [
+        163,
+        174,
+        124
+      ],
+      [
+        155,
+        175,
+        128
+      ]
+    ]
+  },
+  {
+    "id": "chroma-1",
+    "principle": "Chroma",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 1,
+    "explanation": "The other center is slightly more or less vivid. The design varies chroma while holding hue and lightness fixed.",
+    "referenceRgb": [
+      118,
+      153,
+      194
+    ],
+    "candidateRgb": [
+      [
+        110,
+        153,
+        201
+      ],
+      [
+        118,
+        153,
+        194
+      ]
+    ]
+  },
+  {
+    "id": "chroma-2",
+    "principle": "Chroma",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 0,
+    "explanation": "The other center is slightly more or less vivid. The design varies chroma while holding hue and lightness fixed.",
+    "referenceRgb": [
+      108,
+      168,
+      130
+    ],
+    "candidateRgb": [
+      [
+        108,
+        168,
+        130
+      ],
+      [
+        115,
+        167,
+        133
+      ]
+    ]
+  },
+  {
+    "id": "chroma-3",
+    "principle": "Chroma",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 1,
+    "explanation": "The other center is slightly more or less vivid. The design varies chroma while holding hue and lightness fixed.",
+    "referenceRgb": [
+      165,
+      109,
+      111
+    ],
+    "candidateRgb": [
+      [
+        173,
+        105,
+        108
+      ],
+      [
+        165,
+        109,
+        111
+      ]
+    ]
+  },
+  {
+    "id": "chroma-4",
+    "principle": "Chroma",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 0,
+    "explanation": "The other center is slightly more or less vivid. The design varies chroma while holding hue and lightness fixed.",
+    "referenceRgb": [
+      209,
+      174,
+      116
+    ],
+    "candidateRgb": [
+      [
+        209,
+        174,
+        116
+      ],
+      [
+        206,
+        175,
+        125
+      ]
+    ]
+  },
+  {
+    "id": "lightness-1",
+    "principle": "Lightness",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 0,
+    "explanation": "The other center is slightly lighter or darker. The design holds hue and chroma fixed.",
+    "referenceRgb": [
+      140,
+      131,
+      174
+    ],
+    "candidateRgb": [
+      [
+        140,
+        131,
+        174
+      ],
+      [
+        148,
+        139,
+        183
+      ]
+    ]
+  },
+  {
+    "id": "lightness-2",
+    "principle": "Lightness",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 1,
+    "explanation": "The other center is slightly lighter or darker. The design holds hue and chroma fixed.",
+    "referenceRgb": [
+      205,
+      156,
+      120
+    ],
+    "candidateRgb": [
+      [
+        196,
+        148,
+        113
+      ],
+      [
+        205,
+        156,
+        120
+      ]
+    ]
+  },
+  {
+    "id": "lightness-3",
+    "principle": "Lightness",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 0,
+    "explanation": "The other center is slightly lighter or darker. The design holds hue and chroma fixed.",
+    "referenceRgb": [
+      90,
+      159,
+      156
+    ],
+    "candidateRgb": [
+      [
+        90,
+        159,
+        156
+      ],
+      [
+        98,
+        167,
+        164
+      ]
+    ]
+  },
+  {
+    "id": "lightness-4",
+    "principle": "Lightness",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 1,
+    "explanation": "The other center is slightly lighter or darker. The design holds hue and chroma fixed.",
+    "referenceRgb": [
+      143,
+      191,
+      145
+    ],
+    "candidateRgb": [
+      [
+        135,
+        183,
+        137
+      ],
+      [
+        143,
+        191,
+        145
+      ]
+    ]
+  },
+  {
+    "id": "surround-contrast-1",
+    "principle": "Surround contrast",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 1,
+    "explanation": "Different surrounds can change how the centers look. The match is the center with the same encoded color as the reference.",
+    "referenceRgb": [
+      181,
+      148,
+      133
+    ],
+    "candidateRgb": [
+      [
+        188,
+        146,
+        126
+      ],
+      [
+        181,
+        148,
+        133
+      ]
+    ]
+  },
+  {
+    "id": "surround-contrast-2",
+    "principle": "Surround contrast",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 0,
+    "explanation": "Different surrounds can change how the centers look. The match is the center with the same encoded color as the reference.",
+    "referenceRgb": [
+      116,
+      136,
+      160
+    ],
+    "candidateRgb": [
+      [
+        116,
+        136,
+        160
+      ],
+      [
+        124,
+        135,
+        150
+      ]
+    ]
+  },
+  {
+    "id": "surround-contrast-3",
+    "principle": "Surround contrast",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 1,
+    "explanation": "Different surrounds can change how the centers look. The match is the center with the same encoded color as the reference.",
+    "referenceRgb": [
+      160,
+      173,
+      149
+    ],
+    "candidateRgb": [
+      [
+        157,
+        174,
+        141
+      ],
+      [
+        160,
+        173,
+        149
+      ]
+    ]
+  },
+  {
+    "id": "surround-contrast-4",
+    "principle": "Surround contrast",
+    "prompt": "Which bottom center square matches the top center square?",
+    "options": [
+      "Bottom left",
+      "Bottom right"
+    ],
+    "answer": 0,
+    "explanation": "Different surrounds can change how the centers look. The match is the center with the same encoded color as the reference.",
+    "referenceRgb": [
+      176,
+      143,
+      162
+    ],
+    "candidateRgb": [
+      [
+        176,
+        143,
+        162
+      ],
+      [
+        167,
+        147,
+        158
+      ]
+    ]
+  }
+]
