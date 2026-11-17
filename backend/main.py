@@ -4,12 +4,12 @@ from contextlib import asynccontextmanager, closing
 from typing import Literal
 from uuid import UUID, uuid4
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Path
 from fastapi.responses import FileResponse, JSONResponse
 from . import color, depth, experiment, gestalt, illusions, speech
 from .change_pairs import load_change_bank
-from .sessions import Answer, connect, score_trial, utc_now
-from .stimulus import CHOICES, DATA, GROUND_TRUTH, MASK_BOX, MASK_FRACTION, MODEL_ID, PROMPT, REVISION
+from .sessions import Answer, connect, score_trial, sessions_directory, utc_now
+from .stimulus import CHOICES, DATA, GROUND_TRUTH, MASK_BOX, MASK_FRACTION, MODEL_ID, PROMPT, REVISION, review_image_url
 
 
 def load_prediction():
@@ -37,7 +37,7 @@ def load_prediction():
 
 @asynccontextmanager
 async def lifespan(app):
-    (DATA / "sessions").mkdir(parents=True, exist_ok=True)
+    sessions_directory().mkdir(parents=True, exist_ok=True)
     with closing(connect()) as db, db:
         db.execute("""
             CREATE TABLE IF NOT EXISTS pilot_sessions (
@@ -102,7 +102,7 @@ def build_result(row):
         "created_at": row["created_at"],
         "condition": "occlusion",
         "block": "pilot",
-        "imageUrl": image_url(row["session_id"]),
+        "imageUrl": review_image_url(stimulus["stimulus_id"]),
     }
 
 
@@ -120,6 +120,14 @@ def health():
             "experimentReady": ready, "blurReady": blur_ready, "lightingReady": lighting_ready, "changeReady": change_ready, "pilotReady": pilot_ready,
             "depthReady": app.state.depth_predictions is not None, "gestaltReady": gestalt_ready, "colorReady": color_ready,
             "illusionsReady": illusions_ready, "speechReady": app.state.speech_predictions is not None}
+
+
+@app.get("/api/review-images/{digest}.png")
+def review_image(digest: str = Path(pattern=r"^[0-9a-f]{64}$")):
+    path = DATA / "stimuli" / f"{digest}.png"
+    if not path.is_file():
+        raise HTTPException(404, "Stimulus file missing.")
+    return FileResponse(path, media_type="image/png", headers={"Cache-Control": "public, max-age=31536000, immutable"})
 
 
 @app.get("/api/speech/predictions")

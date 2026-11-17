@@ -1,6 +1,7 @@
 import type { ExperimentResult, ExperimentTrial, LevelResult, PilotResult, Topic } from "./pilot";
 import { AccuracyChart } from "./accuracy-chart";
 import { AnswerComparison } from "./answer-comparison";
+import { saveDownload } from "./result-storage";
 import { topics } from "./topics";
 import { PairReview, regionLabels } from "./pair-images";
 
@@ -71,14 +72,13 @@ export function Results({ result, topic }: { result?: PilotResult | ExperimentRe
     ai_only_correct: Number(pilot.outcome === "ai_only_correct"),
     both_wrong: Number(pilot.outcome === "both_wrong"),
   } : undefined);
-  const exportHref = result && `/api/${experiment ? "experiment/" : ""}sessions/${result.session_id}/export`;
   return (
     <section className="results">
       <div className="result-heading">
         {pilot ? <div><p className="eyebrow">Pilot results</p><h1>Perception profile</h1></div>
           : <h1>{topic === "change" ? "Change Detection" : title} Results</h1>}
-        {exportHref
-          ? <a className="button secondary" href={exportHref} download>Export session</a>
+        {result
+          ? <button className="button secondary" type="button" onClick={() => saveDownload(`perception-${pilot ? "pilot" : topic}-${result.session_id}.json`, result)}>Export session</button>
           : <button className="button secondary" disabled>Export session</button>}
       </div>
       {pilot && <p className="lede">One participant, one image, one CLIP prediction. This pilot checks the trial workflow.</p>}

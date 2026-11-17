@@ -1,3 +1,4 @@
+import { getSavedPredictions } from "./saved-predictions";
 import { useEffect, useRef, useState } from "react";
 import { AudioPlayer } from "./audio-player";
 import { normalizedWord } from "./speech-scoring";
@@ -112,10 +113,9 @@ export function SpeechResults({ answers }: { answers?: SpeechAnswers }) {
   useEffect(() => {
     if (!answers) return;
     const controller = new AbortController();
-    fetch("/api/speech/predictions", { signal: AbortSignal.any([controller.signal, AbortSignal.timeout(5000)]) })
-      .then(async (response) => {
-        if (!response.ok) throw new Error("Speech predictions unavailable");
-        const values = await response.json() as Transcripts;
+    getSavedPredictions("speech", AbortSignal.any([controller.signal, AbortSignal.timeout(5000)]))
+      .then((predictions) => {
+        const values = predictions as Transcripts;
         if (!trials.every(({ id }) => typeof values[id] === "string")) throw new Error("Missing speech predictions");
         if (!controller.signal.aborted) setTranscripts(values);
       })

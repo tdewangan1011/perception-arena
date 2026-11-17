@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data and credits · Perception Arena</title>
+  <style>
+    :root{color-scheme:light;background:#f5f1fb;color:#251f30;font:16px/1.6 system-ui,sans-serif}
+    main{width:min(700px,calc(100% - 32px));margin:44px auto}
+    a{color:#792b27} h1,h2{line-height:1.15} h2{margin-top:32px}
+  </style>
+</head>
+<body><main>
+  <a href="./#overview">← Perception Arena</a>
+  <h1>Data and credits</h1>
+  <h2>Your results</h2>
+  <p>The site saves your latest completed result per challenge in this browser. Returning in the same browser profile at the same address lets you view those results again. Clearing the site’s browser data removes its saved results from this device.</p>
+  <p>Recognition and change-detection sessions, including answers and response times, are processed and stored on the server to score and resume a round. The other challenges score your responses in the browser. Audio challenges play prepared files and do not record from your microphone.</p>
+  <h2>Media credits</h2>
+  <ul>
+    <li>Object recognition and change detection use photographs credited in the <a href="./credits/ATTRIBUTION.md">attribution notes</a> and the <a href="./credits/experiment/manifest.json">Occlusion</a>, <a href="./credits/blur/manifest.json">Blur</a>, <a href="./credits/lighting/manifest.json">Lighting</a>, and <a href="./credits/change/manifest.json">Change Detection</a> manifests. The <a href="./credits/change/practice-source.json">practice credit</a> lists the source for the unscored example.</li>
+    <li>Depth uses <a href="https://huggingface.co/datasets/princeton-vl/LayeredDepth">LayeredDepth</a> CC0 photographs, resized and padded. See the <a href="./credits/depth-scenes.json">scene credits</a>.</li>
+    <li>Speech in Noise adapts <a href="https://huggingface.co/datasets/google/speech_commands">Speech Commands</a> recordings by Pete Warden and the Google Speech Commands contributors under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. See the <a href="./credits/speech/scenes.json">recording manifest</a>.</li>
+  </ul>
+</main></body>
+</html>

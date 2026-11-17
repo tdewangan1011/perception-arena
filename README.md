@@ -4,6 +4,8 @@ Perception Arena separates **Visual** and **Auditory** challenges. The visual ro
 
 ## Run the challenge
 
+For a public release, see the [deployment guide](DEPLOYMENT.md).
+
 Use Node.js 22 or newer and Python 3.14 on Windows. From the repository root in PowerShell:
 
 ```powershell

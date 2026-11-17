@@ -1,3 +1,4 @@
+import { getSavedPredictions } from "./saved-predictions";
 import { useEffect, useRef, useState } from "react";
 import { AccuracyChart } from "./accuracy-chart";
 import { AnswerComparison } from "./answer-comparison";
@@ -164,10 +165,9 @@ export function DiagramResults({ topic, answers }: { topic: DiagramTopic; answer
   useEffect(() => {
     if (!answers) return;
     const controller = new AbortController();
-    fetch(`/api/${topic}/predictions`, { signal: AbortSignal.any([controller.signal, AbortSignal.timeout(5000)]) })
-      .then(async (response) => {
-        if (!response.ok) throw new Error("Diagram predictions unavailable");
-        const choices = await response.json() as DiagramAnswers;
+    getSavedPredictions(topic, AbortSignal.any([controller.signal, AbortSignal.timeout(5000)]))
+      .then((predictions) => {
+        const choices = predictions as DiagramAnswers;
         if (!scenes.every(({ id }) => choices[id] === 0 || choices[id] === 1)) {
           throw new Error("Incomplete diagram predictions");
         }

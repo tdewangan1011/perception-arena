@@ -1,5 +1,7 @@
+import os
 import sqlite3
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Literal
 from uuid import UUID
 
@@ -27,8 +29,13 @@ def utc_now():
     return datetime.now(timezone.utc).isoformat()
 
 
+def sessions_directory():
+    configured = os.environ.get("PERCEPTION_SESSIONS_DIR")
+    return Path(configured) if configured else DATA / "sessions"
+
+
 def connect():
-    db = sqlite3.connect(DATA / "sessions" / "pilot.sqlite3")
+    db = sqlite3.connect(sessions_directory() / "pilot.sqlite3")
     db.row_factory = sqlite3.Row
     return db
 

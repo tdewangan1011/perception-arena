@@ -14,7 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from .change_pairs import CHANGE_VERSION
 from .design import DESIGNS, LABELS, Topic, assign_trials, level_metadata
 from .sessions import Answer, OUTCOMES, connect, score_trial, utc_now
-from .stimulus import DATA, MODEL_ID, PROMPT, REVISION
+from .stimulus import DATA, MODEL_ID, PROMPT, REVISION, review_image_url
 
 router = APIRouter(prefix="/api/experiment")
 
@@ -200,10 +200,12 @@ def experiment_results(session_id: UUID):
     trials, responses = json.loads(row["trials"]), json.loads(row["responses"])
     if len(responses) < len(trials):
         raise HTTPException(409, "Finish the challenge to view results.")
-    scored = [
-        {**score_trial(trial, response), "imageUrl": stimulus_url(session_id, trial["trial_id"]), **pair_url(session_id, trial)}
-        for trial, response in zip(trials, responses, strict=True)
-    ]
+    scored = []
+    for trial, response in zip(trials, responses, strict=True):
+        entry = {**score_trial(trial, response), "imageUrl": review_image_url(trial["stimulus_id"])}
+        if "comparison_stimulus_id" in trial:
+            entry["comparisonUrl"] = review_image_url(trial["comparison_stimulus_id"])
+        scored.append(entry)
     outcomes = Counter(trial["outcome"] for trial in scored)
     by_level = []
     topic = trials[0].get("condition", "occlusion")

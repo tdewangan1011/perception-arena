@@ -178,13 +178,14 @@ function TargetWaveform({ samples }: { samples: number[] }) {
     const context = canvas.current?.getContext("2d");
     if (!context) return;
     const { width, height } = context.canvas;
+    const palette = getComputedStyle(context.canvas);
     context.clearRect(0, 0, width, height);
-    context.strokeStyle = "#596175";
+    context.strokeStyle = palette.getPropertyValue("--line").trim();
     context.beginPath();
     context.moveTo(0, height / 2);
     context.lineTo(width, height / 2);
     context.stroke();
-    context.strokeStyle = "#a7bbff";
+    context.strokeStyle = palette.getPropertyValue("--human").trim();
     context.lineWidth = 2;
     context.beginPath();
     samples.forEach((sample, index) => {

@@ -15,6 +15,7 @@ import { FlickerImages } from "./pair-images";
 import { SpeechChallenge, SpeechResults, type SpeechAnswers } from "./speech";
 import { isToneTopic, toneTopics, type ToneAnswers, type ToneTopic } from "./tone-topics";
 import { blankMs, visibleMs } from "./flicker";
+import { readResult, readResultValue, saveResult, saveResultValue } from "./result-storage";
 import "./styles.css";
 
 const ToneChallenge = lazy(() => import("./tones").then(({ ToneChallenge }) => ({ default: ToneChallenge })));
@@ -57,12 +58,7 @@ type SavedDepth = {
 };
 
 function readDepthResult(): DepthResult | undefined {
-  try {
-    const saved = sessionStorage.getItem(depthResultsKey);
-    if (saved) return (JSON.parse(saved) as SavedDepth).rounds.hard;
-  } catch {
-    // An unreadable saved result should not prevent opening the app.
-  }
+  return readResult<SavedDepth>(depthResultsKey)?.rounds?.hard;
 }
 
 function topicReady(model: ModelStatus, topic: Topic) {
@@ -115,8 +111,7 @@ function Overview() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow"><span className="accent-line" /> A perception experiment</p>
-          <h1>Perception<br />Arena<span className="dot">.</span></h1>
-          <p className="match"><span className="human">Human</span><span className="muted"> / </span><span className="machine">Machine</span></p>
+          <h1>Explore how we perceive.</h1>
           <p className="lede">Recognize objects in altered images and pick out words through background noise. See where your answers and the models’ diverge.</p>
           <div className="actions">
             <a className="button primary" href="#trial">Start challenge <span aria-hidden="true">→</span></a>
@@ -129,6 +124,25 @@ function Overview() {
           <figcaption><span>Illustrative image</span><span>Four possible answers</span></figcaption>
         </figure>
       </section>
+      <section className="overview-topics" aria-labelledby="overview-topics">
+        <h2 id="overview-topics">Choose a challenge</h2>
+        <div className="science">
+          <a className="challenge-card" href="#trial/visual">
+            <div className="challenge-copy">
+              <h3>Visual challenges</h3>
+              <p>Recognize objects with less detail, judge depth, and explore how context affects what you see.</p>
+              <span className="challenge-action">Explore visual challenges <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+          <a className="challenge-card" href="#trial/auditory">
+            <div className="challenge-copy">
+              <h3>Auditory challenges</h3>
+              <p>Pick out words through background noise, compare tones, and listen for a missing fundamental.</p>
+              <span className="challenge-action">Explore auditory challenges <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
+      </section>
       <section className="overview-instructions" aria-labelledby="how-to-play">
         <h2 id="how-to-play">How to play</h2>
         <p className="lede">Choose a visual or auditory challenge and compare your answers with a model.</p>
@@ -137,16 +151,6 @@ function Overview() {
           <li><div><h3>Auditory challenges</h3><p>Use the practice clip to set a comfortable volume. Listen to each clip before answering.</p></div></li>
           <li><div><h3>Review your answers</h3><p>Open Results to compare your completed rounds with the models.</p></div></li>
         </ol>
-      </section>
-      <section className="science" aria-label="The experiment">
-        <article>
-          <h2>What changes in the image</h2>
-          <p>Occlusion covers part of an image. Blur softens edges and fine details across the image. Try either challenge to see what cues you can still use.</p>
-        </article>
-        <article>
-          <h2>What changes in the sound</h2>
-          <p>Pick out words through background noise, or listen to tone pairs and judge pitch and loudness. Compare your answers with Whisper or a signal estimator.</p>
-        </article>
       </section>
     </>
   );
@@ -489,44 +493,42 @@ function ChallengePage({ model, topic, onComplete }: {
   );
 }
 
-function readAuditoryAnswers<T>(key: string): T | undefined {
-  try {
-    const saved = sessionStorage.getItem(key);
-    if (saved) return JSON.parse(saved) as T;
-  } catch {
-    // Ignore an unreadable saved round.
-  }
+function profileStorageKey(view: ResultView) {
+  return `perception-arena-completed-v1-${view}`;
 }
 
 function App() {
   const [{ page, topic, pilotSelected, changeSelected, depthSelected, diagramTopic, speechSelected, toneTopic, auditorySelected, visualSelected, overallSelected }, setRoute] = useState(currentRoute);
   const [model, setModel] = useState<ModelStatus>({ name: "CLIP", state: "loading" });
-  const [profiles, setProfiles] = useState<Partial<Record<ResultView, PilotResult | ExperimentResult>>>({});
-  const [profilesLoading, setProfilesLoading] = useState(() => Object.values(completedKeys).some((key) => sessionStorage.getItem(key)));
+  const [profiles, setProfiles] = useState<Partial<Record<ResultView, PilotResult | ExperimentResult>>>(() => {
+    const saved: Partial<Record<ResultView, PilotResult | ExperimentResult>> = {};
+    for (const view of [...topicIds, "pilot"] as const) {
+      const profile = readResult<PilotResult | ExperimentResult>(profileStorageKey(view));
+      if (profile) saved[view] = profile;
+    }
+    return saved;
+  });
+  const [profilesLoading, setProfilesLoading] = useState(() => ([...topicIds, "pilot"] as const).some((view) => !profiles[view] && sessionStorage.getItem(completedKeys[view])));
   const [profilesUnavailable, setProfilesUnavailable] = useState(0);
   const [depthResult, setDepthResult] = useState(readDepthResult);
-  const [speechAnswers, setSpeechAnswers] = useState(() => readAuditoryAnswers<SpeechAnswers>(speechResultsKey));
+  const [speechAnswers, setSpeechAnswers] = useState(() => readResult<SpeechAnswers>(speechResultsKey));
   const [toneAnswers, setToneAnswers] = useState<Partial<Record<ToneTopic, ToneAnswers>>>(() => ({
-    tones: readAuditoryAnswers<ToneAnswers>(toneResultsKeys.tones),
-    timbre: readAuditoryAnswers<ToneAnswers>(toneResultsKeys.timbre),
-    fundamental: readAuditoryAnswers<ToneAnswers>(toneResultsKeys.fundamental),
+    tones: readResult<ToneAnswers>(toneResultsKeys.tones),
+    timbre: readResult<ToneAnswers>(toneResultsKeys.timbre),
+    fundamental: readResult<ToneAnswers>(toneResultsKeys.fundamental),
   }));
   const [diagramAnswers, setDiagramAnswers] = useState<Partial<Record<DiagramTopic, DiagramAnswers>>>(() => {
     const savedRounds: Partial<Record<DiagramTopic, DiagramAnswers>> = {};
     for (const id of diagramTopics) {
-      try {
-        const saved = sessionStorage.getItem(diagramResultsKeys[id]);
-        if (saved) savedRounds[id] = JSON.parse(saved) as DiagramAnswers;
-      } catch {
-        // Ignore an unreadable saved round.
-      }
+      const saved = readResult<DiagramAnswers>(diagramResultsKeys[id]);
+      if (saved) savedRounds[id] = saved;
     }
     return savedRounds;
   });
   const [latest, setLatest] = useState<ResultView | "depth" | "speech" | ToneTopic | DiagramTopic>(() => {
-    const saved = sessionStorage.getItem(resultsKey);
+    const saved = readResultValue(resultsKey);
     if (saved === "blur" || saved === "occlusion" || saved === "lighting" || saved === "change" || saved === "pilot" || saved === "depth" || saved === "speech" || isToneTopic(saved) || isDiagramTopic(saved)) return saved;
-    return saved === "experiment" || !sessionStorage.getItem(pilotKey) ? "occlusion" : "pilot";
+    return saved === "experiment" || !profiles.pilot && !sessionStorage.getItem(pilotKey) ? "occlusion" : "pilot";
   });
   const latestAuditory = latest === "speech" || isToneTopic(latest);
   const selectedView = toneTopic ?? (speechSelected ? "speech" : auditorySelected ? (latestAuditory ? latest : "speech")
@@ -545,9 +547,13 @@ function App() {
     const pending = [];
     for (const view of [...topicIds, "pilot"] as const) {
       const id = sessionStorage.getItem(completedKeys[view]);
-      if (!id) continue;
+      if (!id || profiles[view]) continue;
       const request = view === "pilot" ? getPilotResult(id) : getExperimentResult(id);
-      pending.push(request.then((saved) => setProfiles((current) => current[view] ? current : { ...current, [view]: saved })));
+      pending.push(request.then((saved) => {
+        if (readResult<PilotResult | ExperimentResult>(profileStorageKey(view))) return;
+        saveResult(profileStorageKey(view), saved);
+        setProfiles((current) => current[view] ? current : { ...current, [view]: saved });
+      }));
     }
     Promise.allSettled(pending).then((results) => {
       setProfilesUnavailable(results.filter((result) => result.status === "rejected").length);
@@ -557,8 +563,8 @@ function App() {
 
   function completeSession(completed: PilotResult | ExperimentResult) {
     const view = "trials" in completed ? completed.condition : "pilot";
-    sessionStorage.setItem(completedKeys[view], completed.session_id);
-    sessionStorage.setItem(resultsKey, view);
+    saveResult(profileStorageKey(view), completed);
+    saveResultValue(resultsKey, view);
     setLatest(view);
     setProfiles((current) => ({ ...current, [view]: completed }));
     location.hash = `results/${view}`;
@@ -566,31 +572,31 @@ function App() {
 
   function completeDepth(result: DepthResult) {
     const saved: SavedDepth = { rounds: { hard: result } };
-    sessionStorage.setItem(depthResultsKey, JSON.stringify(saved));
-    sessionStorage.setItem(resultsKey, "depth");
+    saveResult(depthResultsKey, saved);
+    saveResultValue(resultsKey, "depth");
     setDepthResult(result);
     setLatest("depth");
   }
 
   function completeDiagram(id: DiagramTopic, answers: DiagramAnswers) {
-    sessionStorage.setItem(diagramResultsKeys[id], JSON.stringify(answers));
-    sessionStorage.setItem(resultsKey, id);
+    saveResult(diagramResultsKeys[id], answers);
+    saveResultValue(resultsKey, id);
     setDiagramAnswers((current) => ({ ...current, [id]: answers }));
     setLatest(id);
     location.hash = `results/${id}`;
   }
 
   function completeSpeech(answers: SpeechAnswers) {
-    sessionStorage.setItem(speechResultsKey, JSON.stringify(answers));
-    sessionStorage.setItem(resultsKey, "speech");
+    saveResult(speechResultsKey, answers);
+    saveResultValue(resultsKey, "speech");
     setSpeechAnswers(answers);
     setLatest("speech");
     location.hash = "results/speech";
   }
 
   function completeTones(id: ToneTopic, answers: ToneAnswers) {
-    sessionStorage.setItem(toneResultsKeys[id], JSON.stringify(answers));
-    sessionStorage.setItem(resultsKey, id);
+    saveResult(toneResultsKeys[id], answers);
+    saveResultValue(resultsKey, id);
     setToneAnswers((current) => ({ ...current, [id]: answers }));
     setLatest(id);
     location.hash = `results/${id}`;
@@ -653,7 +659,7 @@ function App() {
             : <Results result={profiles[selectedView]} topic={selectedView === "pilot" ? "occlusion" : selectedView} />}
         </>}
       </main>
-      <footer><span>Sensation &amp; Perception · Course project</span><span>{model.state === "ready" ? "Perception Arena" : "Interface preview"}</span></footer>
+      <footer><span>Sensation &amp; Perception · Course project</span><a href="./about-data.html">Data &amp; credits</a></footer>
     </>
   );
 }

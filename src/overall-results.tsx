@@ -1,3 +1,4 @@
+import { getSavedPredictions } from "./saved-predictions";
 import { useEffect, useState } from "react";
 import { AccuracyChart } from "./accuracy-chart";
 import { AnswerComparison } from "./answer-comparison";
@@ -77,10 +78,8 @@ export function OverallResults({
     if (!requested) return;
     const controller = new AbortController();
     for (const id of requested.split(",") as RemoteTopic[]) {
-      fetch(`/api/${id}/predictions`, { signal: AbortSignal.any([controller.signal, AbortSignal.timeout(5000)]) })
-        .then(async (response) => {
-          if (!response.ok) throw new Error("Comparison unavailable");
-          const data = await response.json() as Record<string, unknown>;
+      getSavedPredictions(id, AbortSignal.any([controller.signal, AbortSignal.timeout(5000)]))
+        .then((data) => {
           if (!controller.signal.aborted) setRemote((current) => ({ ...current, [id]: data }));
         })
         .catch(() => {
