@@ -1,0 +1,19 @@
+{
+  "name": "FreeSurfer fsaverage5 pial cortical surfaces, distributed by Nilearn",
+  "revision": "9b25d180da1d44e9ee56d8e833c1ada9b26ce149",
+  "sources": [
+    {
+      "file": "pial_left.gii.gz",
+      "sha256": "1e76fe43ac194c15fd272643f7ae7995621e2a496b3102b2d6175f0f8e6d7fc8",
+      "source": "https://raw.githubusercontent.com/nilearn/nilearn/9b25d180da1d44e9ee56d8e833c1ada9b26ce149/nilearn/datasets/data/fsaverage5/pial_left.gii.gz"
+    },
+    {
+      "file": "pial_right.gii.gz",
+      "sha256": "fdfae008bc10acf7cba82737ea5db9a7298948c41884a2d3330a785783a60a91",
+      "source": "https://raw.githubusercontent.com/nilearn/nilearn/9b25d180da1d44e9ee56d8e833c1ada9b26ce149/nilearn/datasets/data/fsaverage5/pial_right.gii.gz"
+    }
+  ],
+  "changes": "Converted to GLB. Rotated RAS coordinates to right, superior, posterior. Indices stored as unsigned 16-bit integers. Normals calculated by the viewer.",
+  "license": "FreeSurfer Software License, February 2011",
+  "license_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferSoftwareLicense"
+}

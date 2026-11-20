@@ -43,6 +43,16 @@ export function saveResult(key: string, result: unknown) {
   saveResultValue(key, JSON.stringify(result));
 }
 
+export function removeResult(key: string) {
+  for (const storage of [() => localStorage, () => sessionStorage]) {
+    try {
+      storage().removeItem(key);
+    } catch {
+      // Storage may be unavailable in a restricted browser.
+    }
+  }
+}
+
 export function saveDownload(filename: string, content: unknown) {
   const url = URL.createObjectURL(new Blob([JSON.stringify(content, null, 2)], { type: "application/json" }));
   const link = document.createElement("a");

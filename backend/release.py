@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 
-from . import color, depth, experiment, gestalt, illusions, speech
+from . import color, depth, experiment, gestalt, illusions, speech, prepare_mixed
 from .change_pairs import CHANGE_PREDICTIONS, load_change_bank
 from .main import load_prediction
 from .stimulus import ASSETS, DATA, ROOT
@@ -14,6 +14,7 @@ def verified_data():
     banks = {topic: experiment.load_bank(topic) for topic in experiment.DESIGNS}
     banks["change"] = load_change_bank()
     reports = {
+        prepare_mixed.CACHE: prepare_mixed.load_predictions(),
         depth.CACHE_FILE: depth.load_predictions(),
         gestalt.CACHE: gestalt.load_predictions(),
         color.CACHE: color.load_predictions(),
@@ -28,6 +29,7 @@ def verified_data():
     predictions = [design.predictions for design in experiment.DESIGNS.values()] + [CHANGE_PREDICTIONS, *reports]
     digests = {trial[key] for bank in banks.values() for trial in bank
                for key in ("stimulus_id", "comparison_stimulus_id") if key in trial}
+    digests.update(trial["stimulus_id"] for trial in reports[prepare_mixed.CACHE])
     pilot = load_prediction()
     if pilot:
         predictions.append(DATA / "pilot-prediction.json")

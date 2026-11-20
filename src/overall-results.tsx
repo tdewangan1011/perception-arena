@@ -8,6 +8,7 @@ import type { ExperimentResult, PilotResult, Topic } from "./pilot";
 import type { SpeechAnswers } from "./speech";
 import { normalizedWord } from "./speech-scoring";
 import type { ToneAnswers, ToneTopic } from "./tone-topics";
+import type { MixedResult } from "./mixed";
 import depthScenes from "../assets/depth-scenes.json";
 import gestaltScenes from "../assets/gestalt/scenes.json";
 import colorScenes from "../assets/color/scenes.json";
@@ -38,6 +39,7 @@ type Round = {
   trials: { human: boolean; model?: boolean }[];
 };
 type SummaryProps = {
+  mixedResult?: MixedResult;
   profiles: Partial<Record<Topic | "pilot", PilotResult | ExperimentResult>>;
   profilesLoading: boolean;
   profilesUnavailable: number;
@@ -67,7 +69,7 @@ function percent(correct: number, total: number) {
 }
 
 export function OverallResults({
-  profiles, profilesLoading, profilesUnavailable, depthResult, diagramAnswers, speechAnswers, toneAnswers,
+  profiles, profilesLoading, profilesUnavailable, depthResult, diagramAnswers, speechAnswers, toneAnswers, mixedResult,
 }: SummaryProps) {
   const requested = [
     ...(Object.keys(diagramRounds) as DiagramTopic[]).filter((id) => diagramAnswers[id]),
@@ -90,6 +92,10 @@ export function OverallResults({
   }, [requested]);
 
   const rounds: Round[] = [];
+  if (mixedResult) {
+    rounds.push({ id: "mixed", label: "Mixed Visual", model: "CLIP / Depth Anything",
+      trials: mixedResult.trials.map((trial) => ({ human: trial.human_correct, model: trial.model_correct })) });
+  }
   for (const id of Object.keys(experiments) as Topic[]) {
     const profile = profiles[id];
     if (profile && "trials" in profile) {
@@ -180,6 +186,7 @@ export function OverallResults({
   return <section className="results overall-results">
     <h1>Overall Results</h1>
     <p className="lede">Your latest completed round in each challenge, with visual and auditory scores side by side.</p>
+    {mixedResult && <p className="note">Your <a href="#results/mixed">Mixed Visual comparison score</a> is {mixedResult.composite_score}/100. Mixed trials also contribute to the totals below.</p>}
     {loading && <p className="note" role="status">Loading saved scores and comparisons…</p>}
     {profilesUnavailable > 0 && <p className="note">Some saved results could not be loaded from the API.</p>}
     {!stats.length ? <section className="panel overall-empty">

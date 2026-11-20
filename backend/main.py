@@ -6,7 +6,7 @@ from uuid import UUID, uuid4
 
 from fastapi import FastAPI, HTTPException, Path
 from fastapi.responses import FileResponse, JSONResponse
-from . import color, depth, experiment, gestalt, illusions, speech
+from . import color, depth, experiment, gestalt, illusions, mixed, speech
 from .change_pairs import load_change_bank
 from .sessions import Answer, connect, score_trial, sessions_directory, utc_now
 from .stimulus import CHOICES, DATA, GROUND_TRUTH, MASK_BOX, MASK_FRACTION, MODEL_ID, PROMPT, REVISION, review_image_url
@@ -49,6 +49,7 @@ async def lifespan(app):
             )
         """)
         experiment.initialize(db)
+        mixed.initialize(db)
     app.state.prediction = load_prediction()
     app.state.experiment_banks = {topic: experiment.load_bank(topic) for topic in experiment.DESIGNS}
     app.state.experiment_banks["change"] = load_change_bank()
@@ -59,12 +60,14 @@ async def lifespan(app):
         "color": color.load_predictions(),
         "illusions": illusions.load_predictions(),
     }
+    app.state.mixed_bank = mixed.build_bank(app)
     yield
 
 
 app = FastAPI(title="Perception Arena", lifespan=lifespan)
 app.include_router(experiment.router)
 app.include_router(depth.router)
+app.include_router(mixed.router)
 
 
 def get_session(db, session_id):
@@ -119,7 +122,8 @@ def health():
     return {"name": "CLIP ViT-B/32", "state": "ready" if any((ready, blur_ready, lighting_ready, change_ready, pilot_ready, gestalt_ready, color_ready, illusions_ready)) else "unavailable",
             "experimentReady": ready, "blurReady": blur_ready, "lightingReady": lighting_ready, "changeReady": change_ready, "pilotReady": pilot_ready,
             "depthReady": app.state.depth_predictions is not None, "gestaltReady": gestalt_ready, "colorReady": color_ready,
-            "illusionsReady": illusions_ready, "speechReady": app.state.speech_predictions is not None}
+            "illusionsReady": illusions_ready, "speechReady": app.state.speech_predictions is not None,
+            "mixedReady": bool(app.state.mixed_bank)}
 
 
 @app.get("/api/review-images/{digest}.png")

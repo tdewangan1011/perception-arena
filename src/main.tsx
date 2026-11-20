@@ -16,6 +16,8 @@ import { SpeechChallenge, SpeechResults, type SpeechAnswers } from "./speech";
 import { isToneTopic, toneTopics, type ToneAnswers, type ToneTopic } from "./tone-topics";
 import { blankMs, visibleMs } from "./flicker";
 import { readResult, readResultValue, saveResult, saveResultValue } from "./result-storage";
+import { mixedResultKey, MixedChallenge, MixedResults, type MixedResult } from "./mixed";
+import { PathwayLesson } from "./pathway-lesson";
 import "./styles.css";
 
 const ToneChallenge = lazy(() => import("./tones").then(({ ToneChallenge }) => ({ default: ToneChallenge })));
@@ -84,7 +86,7 @@ function currentRoute() {
     diagramTopic: diagramTopics.find((id) => id === selected), speechSelected: selected === "speech",
     toneTopic: toneTopics.find((id) => id === selected),
     auditorySelected: selected === "auditory", visualSelected: selected === "visual",
-    overallSelected: page === "results" && (!selected || selected === "overall") };
+    overallSelected: page === "results" && (!selected || selected === "overall"), mixedSelected: selected === "mixed" };
 }
 
 function Stimulus({ imageUrl, preview = true, square = false, onLoad, onError }: {
@@ -110,7 +112,7 @@ function Overview() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="accent-line" /> A perception experiment</p>
+          <p className="eyebrow"><span className="accent-line" /> A perception game</p>
           <h1>Explore how we perceive.</h1>
           <p className="lede">Recognize objects in altered images and pick out words through background noise. See where your answers and the models’ diverge.</p>
           <div className="actions">
@@ -339,6 +341,13 @@ function ChallengePicker({ model, auditory }: { model: ModelStatus; auditory: bo
           </div>
         </a>
       </div> : <div className="challenge-options">
+        <a className="challenge-card mixed-challenge-card" href="#trial/mixed">
+          <div className="challenge-copy">
+            <h2>Mixed Visual Challenge</h2>
+            <p>Play across eight visual topics with adaptive recognition and color trials.</p>
+            <span className="challenge-action">32 trials · Human–AI comparison score <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
         {recognitionTopics.map((topic) => {
           const { title, description } = topics[topic];
           const resumable = Boolean(sessionStorage.getItem(activeKeys[topic]));
@@ -498,7 +507,7 @@ function profileStorageKey(view: ResultView) {
 }
 
 function App() {
-  const [{ page, topic, pilotSelected, changeSelected, depthSelected, diagramTopic, speechSelected, toneTopic, auditorySelected, visualSelected, overallSelected }, setRoute] = useState(currentRoute);
+  const [{ page, topic, pilotSelected, changeSelected, depthSelected, diagramTopic, speechSelected, toneTopic, auditorySelected, visualSelected, overallSelected, mixedSelected }, setRoute] = useState(currentRoute);
   const [model, setModel] = useState<ModelStatus>({ name: "CLIP", state: "loading" });
   const [profiles, setProfiles] = useState<Partial<Record<ResultView, PilotResult | ExperimentResult>>>(() => {
     const saved: Partial<Record<ResultView, PilotResult | ExperimentResult>> = {};
@@ -511,6 +520,7 @@ function App() {
   const [profilesLoading, setProfilesLoading] = useState(() => ([...topicIds, "pilot"] as const).some((view) => !profiles[view] && sessionStorage.getItem(completedKeys[view])));
   const [profilesUnavailable, setProfilesUnavailable] = useState(0);
   const [depthResult, setDepthResult] = useState(readDepthResult);
+  const [mixedResult, setMixedResult] = useState(() => readResult<MixedResult>(mixedResultKey));
   const [speechAnswers, setSpeechAnswers] = useState(() => readResult<SpeechAnswers>(speechResultsKey));
   const [toneAnswers, setToneAnswers] = useState<Partial<Record<ToneTopic, ToneAnswers>>>(() => ({
     tones: readResult<ToneAnswers>(toneResultsKeys.tones),
@@ -525,13 +535,13 @@ function App() {
     }
     return savedRounds;
   });
-  const [latest, setLatest] = useState<ResultView | "depth" | "speech" | ToneTopic | DiagramTopic>(() => {
+  const [latest, setLatest] = useState<ResultView | "depth" | "speech" | "mixed" | ToneTopic | DiagramTopic>(() => {
     const saved = readResultValue(resultsKey);
-    if (saved === "blur" || saved === "occlusion" || saved === "lighting" || saved === "change" || saved === "pilot" || saved === "depth" || saved === "speech" || isToneTopic(saved) || isDiagramTopic(saved)) return saved;
+    if (saved === "blur" || saved === "occlusion" || saved === "lighting" || saved === "change" || saved === "pilot" || saved === "depth" || saved === "speech" || saved === "mixed" || isToneTopic(saved) || isDiagramTopic(saved)) return saved;
     return saved === "experiment" || !profiles.pilot && !sessionStorage.getItem(pilotKey) ? "occlusion" : "pilot";
   });
   const latestAuditory = latest === "speech" || isToneTopic(latest);
-  const selectedView = toneTopic ?? (speechSelected ? "speech" : auditorySelected ? (latestAuditory ? latest : "speech")
+  const selectedView = mixedSelected ? "mixed" : toneTopic ?? (speechSelected ? "speech" : auditorySelected ? (latestAuditory ? latest : "speech")
     : diagramTopic ?? (depthSelected ? "depth" : pilotSelected ? "pilot" : topic ?? (visualSelected && latestAuditory ? "occlusion" : latest)));
   const auditoryResults = selectedView === "speech" || isToneTopic(selectedView);
   useEffect(() => {
@@ -602,6 +612,14 @@ function App() {
     location.hash = `results/${id}`;
   }
 
+  function completeMixed(result: MixedResult) {
+    saveResult(mixedResultKey, result);
+    saveResultValue(resultsKey, "mixed");
+    setMixedResult(result);
+    setLatest("mixed");
+    location.hash = "results/mixed";
+  }
+
   useEffect(() => {
     function navigate() {
       setRoute(currentRoute());
@@ -627,8 +645,9 @@ function App() {
         </div>
       </header>
       <main id="main" tabIndex={-1}>
-        {page === "overview" && <Overview />}
-        {page === "trial" && (toneTopic ? <Suspense fallback={<p className="note" role="status">Loading tones…</p>}>
+        {page === "overview" && <><Overview /><PathwayLesson mode="visual" both /></>}
+        {page === "trial" && (mixedSelected ? <MixedChallenge onComplete={completeMixed} />
+          : toneTopic ? <Suspense fallback={<p className="note" role="status">Loading tones…</p>}>
           <ToneChallenge key={toneTopic} topic={toneTopic} onComplete={(answers) => completeTones(toneTopic, answers)} />
         </Suspense>
           : speechSelected ? <SpeechChallenge onComplete={completeSpeech} />
@@ -636,12 +655,15 @@ function App() {
           : changeSelected ? <ChangeBlindness /> : depthSelected ? <DepthChallenge onComplete={completeDepth} /> : topic
           ? <ChallengePage key={topic} topic={topic} model={model} onComplete={completeSession} />
           : <ChallengePicker model={model} auditory={auditorySelected} />)}
+        {page === "trial" && <PathwayLesson key={speechSelected || toneTopic || auditorySelected ? "auditory" : "visual"}
+          mode={speechSelected || toneTopic || auditorySelected ? "auditory" : "visual"} />}
         {page === "results" && <>
           <PerceptionNav page="results" auditory={auditoryResults} overall={overallSelected} />
           {!overallSelected && (auditoryResults ? <nav className="result-tabs" aria-label="Auditory results by topic">
             <a href="#results/speech" aria-current={selectedView === "speech" ? "page" : undefined}>Speech in Noise</a>
             {toneTopics.map((id) => <a key={id} href={`#results/${id}`} aria-current={selectedView === id ? "page" : undefined}>{toneLabels[id]}</a>)}
           </nav> : <nav className="result-tabs" aria-label="Visual results by topic">
+            <a href="#results/mixed" aria-current={selectedView === "mixed" ? "page" : undefined}>Mixed Visual</a>
             {topicIds.map((id) => <a href={`#results/${id}`} aria-current={selectedView === id ? "page" : undefined} key={id}>{topics[id].title}</a>)}
             <a href="#results/depth" aria-current={selectedView === "depth" ? "page" : undefined}>Depth</a>
             {diagramTopics.map((id) => <a href={`#results/${id}`} aria-current={selectedView === id ? "page" : undefined} key={id}>{diagramLabels[id]}</a>)}
@@ -649,8 +671,8 @@ function App() {
           </nav>)}
           {overallSelected ? <Suspense fallback={<p className="note" role="status">Loading overall results…</p>}>
             <OverallResults profiles={profiles} profilesLoading={profilesLoading} profilesUnavailable={profilesUnavailable} depthResult={depthResult}
-              diagramAnswers={diagramAnswers} speechAnswers={speechAnswers} toneAnswers={toneAnswers} />
-          </Suspense> : isToneTopic(selectedView) ? <Suspense fallback={<p className="note" role="status">Loading results…</p>}>
+              diagramAnswers={diagramAnswers} speechAnswers={speechAnswers} toneAnswers={toneAnswers} mixedResult={mixedResult} />
+          </Suspense> : selectedView === "mixed" ? <MixedResults result={mixedResult} /> : isToneTopic(selectedView) ? <Suspense fallback={<p className="note" role="status">Loading results…</p>}>
             <ToneResults topic={selectedView} answers={toneAnswers[selectedView]} />
           </Suspense>
             : selectedView === "speech" ? <SpeechResults answers={speechAnswers} />

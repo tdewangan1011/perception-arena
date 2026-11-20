@@ -10,6 +10,7 @@ export interface ModelStatus {
   colorReady?: boolean;
   illusionsReady?: boolean;
   speechReady?: boolean;
+  mixedReady?: boolean;
   pilotReady?: boolean;
 }
 

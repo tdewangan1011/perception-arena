@@ -335,3 +335,60 @@ summary { cursor: pointer; }
   .depth-page { padding-block: 30px; }
   .result-heading { align-items: flex-start; flex-direction: column; }
 }
+.mixed-challenge-card { border-left: 4px solid var(--human); }
+.mixed-page { max-width: 1080px; margin-inline: auto; }
+.mixed-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.mixed-layout h1 { font-size: clamp(1.8rem, 3vw, 2.8rem); margin-block: 8px 20px; }
+.mixed-layout .diagram-choices { margin-top: 16px; }
+.mixed-image { background: #d0d0d0; }
+.mixed-rules { color: var(--muted); padding-left: 22px; margin-block: 20px; max-width: 74ch; }
+.mixed-rules li { margin-bottom: 8px; }
+.mixed-score-details { margin-top: 16px; }
+.mixed-score-details .diagram-table { margin-top: 16px; width: 100%; }
+.scores strong small { font-size: 1rem; color: var(--muted); }
+@media(max-width:680px) { .mixed-layout { grid-template-columns: 1fr; } }
+
+.pathway-lesson { margin-block: 22px 36px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+.pathway-lesson > summary { color: var(--human); font-family: var(--display); }
+.pathway-mode-buttons { display: flex; gap: 8px; margin-top: 18px; }
+.pathway-mode-buttons [aria-pressed="true"] { background: var(--selected); border-color: var(--human); }
+.pathway-viewer { margin-top: 20px; }
+.pathway-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.pathway-heading h2 { margin-top: 5px; font-size: clamp(1.6rem, 3vw, 2.15rem); }
+.pathway-layout { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(230px, 1fr); gap: 22px; align-items: start; }
+.brain-canvas { position: relative; width: 100%; height: clamp(330px, 36vw, 470px); overflow: hidden; background: linear-gradient(150deg, #eee5f1, #f9f5fa); border: 1px solid var(--line); border-radius: 6px; }
+.brain-canvas canvas { display: block; width: 100%; height: 100%; }
+.brain-status { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; padding: 28px; color: var(--muted); }
+.brain-node-label { position: absolute; pointer-events: none; padding: 4px 8px; max-width: 170px; background: #fffaf8ed; border: 1px solid var(--line); border-radius: 4px; font-size: .8rem; font-weight: 600; box-shadow: 0 2px 7px #33203510; }
+.brain-node-label[hidden] { display: none; }
+.brain-toolbar { display: flex; align-items: center; gap: 12px 18px; flex-wrap: wrap; margin-block: 12px 7px; }
+.brain-views { display: flex; flex-wrap: wrap; gap: 4px; }
+.brain-views button { min-height: 36px; padding: 5px 8px; background: var(--paper); border: 1px solid var(--line); color: var(--human); border-radius: 4px; cursor: pointer; }
+.brain-toolbar label { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--muted); }
+.brain-toolbar input { width: 95px; accent-color: var(--human); }
+.brain-toolbar select { margin: 0; padding: 3px 7px; }
+.pathway-steps ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 3px; }
+.pathway-steps li button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px; min-height: 39px; background: transparent; border: 1px solid transparent; color: var(--muted); text-align: left; font-size: .9rem; border-radius: 4px; cursor: pointer; }
+.pathway-steps button[aria-current] { border-color: var(--line); color: var(--human); background: var(--selected); font-weight: 700; }
+.pathway-step-dot { display: grid; place-items: center; border: 1px solid var(--line); width: 22px; height: 22px; border-radius: 50%; font-size: .7rem; flex: 0 0 auto; }
+.pathway-explanation { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 14px; }
+.pathway-explanation h3 { font-size: .98rem; }
+.pathway-explanation p { font-size: .9rem; color: var(--muted); margin-top: 6px; }
+.pathway-context { margin-top: 18px; max-width: 100ch; }
+.pathway-sources { margin-top: 8px; }
+.pathway-sources a { color: var(--human); text-decoration: underline; text-underline-offset: 3px; }
+@media(max-width:760px) {
+  .pathway-layout { grid-template-columns: minmax(0, 1fr); }
+  .brain-canvas { height: 340px; }
+  .pathway-lesson { padding: 15px 12px; }
+}
+.pathway-streams { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.pathway-streams button { min-height: 38px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); padding: 6px 12px; background: transparent; cursor: pointer; }
+.pathway-streams [aria-pressed="true"] { background: var(--selected); border-color: currentColor; }
+.pathway-streams .stream-ventral { color: #26796d; }
+.pathway-streams .stream-dorsal { color: #915a0d; }
+.pathway-streams .stream-ventral::before, .pathway-streams .stream-dorsal::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 7px; background: currentColor; }
+.pathway-steps ol { max-height: 465px; overflow-y: auto; padding-right: 5px; }
+.pathway-steps .stream-ventral .pathway-step-dot { color: #26796d; border-color: #26796d; }
+.pathway-steps .stream-dorsal .pathway-step-dot { color: #915a0d; border-color: #915a0d; }
+@media(max-width:760px) { .pathway-steps ol { max-height: none; overflow-y: visible; } }

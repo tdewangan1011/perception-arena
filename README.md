@@ -21,6 +21,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m backend.color --score
 .\.venv\Scripts\python.exe -m backend.illusions --score
 .\.venv\Scripts\python.exe -m backend.speech --score
+.\.venv\Scripts\python.exe -m backend.prepare_mixed
 ```
 
 Preparation creates 64 recognition variants per topic and 12 change-detection pairs, and precomputes CLIP predictions. The first run downloads the public checkpoint from Hugging Face (about 600 MB). Keep `data/model-cache` to reuse the weights. If Hugging Face Xet transfer is unavailable, set `$env:HF_HUB_DISABLE_XET = "1"` before running preparation. To enable the separate one-image pilot, also run `\.venv\Scripts\python.exe -m backend.prepare`.
@@ -125,3 +126,23 @@ Choose **Challenge → Auditory → Same Pitch, Different Timbre**. All 16 pairs
 Choose **Challenge → Auditory → Missing Fundamental**. Each of the 16 trials plays a complex target followed by two pure reference notes. The target lacks its first harmonic, but it still repeats at the fundamental frequency. One reference matches that repeat rate. The other is either a nearby pitch or an octave higher.
 
 The estimator analyzes the same WAV and chooses the reference nearest to its measured target in pitch. It can favor the higher octave when the even harmonics dominate. **Results → Auditory → Missing Fundamental** shows the target waveform and spectrum, the estimated repeat rate, and replays. Run `python -m backend.fundamental` to rebuild the audio and measurements. This round runs without the API. [Missing-fundamental pitch research](https://pmc.ncbi.nlm.nih.gov/articles/PMC11924889/)
+
+## Mixed Visual Challenge
+
+**Challenge → Visual → Mixed Visual Challenge** interleaves all eight visual topics, with four trials per topic and no repeated source within the 32-trial round. Recognition photos are drawn from the combined 48 distinct Occlusion, Blur, and Lighting sources. New mixed-only conditions produce 240 variants per recognition topic, and 12 generated color layouts provide 60 color trials. Together with the 65 existing fixed Depth, Gestalt, Illusions, and Change Detection questions, the bank contains 845 scored variants.
+
+Occlusion, Blur, Lighting, and Color have five intended difficulty levels. Each starts at level 2. Correct answers move up one level for that topic, and misses move down one, bounded between levels 1 and 5. The other topics use fixed comparison questions. Color levels reduce the chroma difference between the matching and distracting centers. Recognition levels increase masking, blur, or exposure shifts. The same selected images go to the participant and the model, with the existing full-frame/crop comparison difference in Change Detection.
+
+The game score gives each topic equal weight. Within a topic, adaptive trials use weights 1–5 by level, and fixed trials use weight 1. A topic comparison score is 50 plus 50 times the difference between weighted human and model accuracy (as proportions). The final score averages the eight topic scores. A score of 50 is a tie. This score is specific to the selected trials, transformations, and models. The difficulty levels have not been calibrated as equivalent across topics or against a population.
+
+Run `python -m backend.prepare_mixed` to generate the expanded bank and score every variant with the pinned CLIP checkpoint. The production bundle includes the prepared mixed bank and image files. Mixed results remain in browser storage alongside the other completed rounds. The next round prefers source IDs not in the last 256 used sources, falling back to used sources when that topic's fresh pool is exhausted.
+
+## Sensory pathways in 3D
+
+The Overview and challenge pages include an expandable visual or auditory pathway viewer. It loads Three.js and the cortical surface when opened. Animations start with the Animate signals button, pause when the view is offscreen or the document is hidden, and release the renderer when the section closes. The pathway steps remain readable when WebGL is unavailable.
+
+The cortex uses FreeSurfer fsaverage5 pial surfaces distributed by Nilearn, with 10,242 vertices per hemisphere. The GLB is a rotated coordinate conversion of the public GIFTI surfaces. The original file checksums, pinned source revision, and redistribution license are in `public/brain/`. Relay markers and connecting curves are approximate educational overlays. The visual route includes crossed and uncrossed traces around the chiasm. The auditory route includes bilateral projections above the cochlear nuclei.
+
+Anatomy references are the [retinal projection chapter in Neuroscience](https://www.ncbi.nlm.nih.gov/books/NBK11145/) and [Neuroanatomy, Auditory Pathway](https://www.ncbi.nlm.nih.gov/books/NBK532311/).
+
+The 3D tour also includes extrastriate visual regions V2, V3, V4, and MT/V5 with selected ventral occipitotemporal and dorsal occipitoparietal connections. The auditory tour extends through belt/parabelt areas to ventral sound-recognition and speech-meaning networks, and dorsal spatial and speech–motor networks. Stream focus controls filter the rendered branches and stage list. The numbered stages form an educational tour of connected regions; real cortical processing includes parallel projections, recurrent connections, and feedback.

@@ -29,3 +29,5 @@ data/illusions-predictions.json
 data/illusions-predictions.tmp
 data/speech-predictions.json
 data/speech-predictions.tmp
+data/mixed-predictions.json
+data/mixed-predictions.tmp

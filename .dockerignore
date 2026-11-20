@@ -1,0 +1,5 @@
+**
+!deploy/
+!deploy/fetch-release.py
+!Dockerfile
+!.dockerignore

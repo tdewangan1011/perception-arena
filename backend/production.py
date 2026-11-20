@@ -12,6 +12,7 @@ if not (DIST / "index.html").is_file():
 REQUIRED = (
     "experimentReady", "blurReady", "lightingReady", "changeReady", "depthReady",
     "gestaltReady", "colorReady", "illusionsReady", "speechReady",
+    "mixedReady",
 )
 
 

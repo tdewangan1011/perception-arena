@@ -27,3 +27,9 @@ Depth uses CC0 validation photos from [LayeredDepth](https://huggingface.co/data
 ## Speech in Noise
 
 Source recordings are from [Speech Commands v0.01](https://huggingface.co/datasets/google/speech_commands) by Pete Warden and Google Speech Commands contributors, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Clean recordings were trimmed, padded, and level-adjusted. The matched noisy recordings add synthesized speech-shaped noise. Original filenames are recorded in [speech/scenes.json](speech/scenes.json).
+
+The mixed visual bank uses the same credited source photographs from Occlusion, Blur, and Lighting, with additional masks, blur, and exposure adjustments. Each derivative retains its original license. The mixed-only color questions are generated diagrams.
+
+## 3D cortical surface
+
+The sensory pathway viewer uses the FreeSurfer fsaverage5 pial surfaces distributed by [Nilearn](https://github.com/nilearn/nilearn/tree/9b25d180da1d44e9ee56d8e833c1ada9b26ce149/nilearn/datasets/data/fsaverage5). The converted GLB rotates the axes to right, superior, and posterior; indices are converted to unsigned 16-bit integers, and the viewer calculates vertex normals. These are modified cortical template surfaces. Pathway curves and markers are schematic overlays. Source URLs, original checksums, and the pinned revision are in [the provenance file](../public/brain/provenance.json), with the [redistribution license](../public/brain/LICENSE.txt).
