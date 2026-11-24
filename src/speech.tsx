@@ -60,7 +60,7 @@ function ListeningTrial({ trial, position, volume, onVolumeChange, onAnswer }: {
     <h1 ref={heading} tabIndex={-1}>Which word did you hear?</h1>
     <AudioPlayer src={noisyAudio(trial.id)} label="noisy word clip" volume={volume} onVolumeChange={onVolumeChange}
       onEnded={() => setHeard(true)} />
-    <p className="note">{heard ? "Pick the closest word. You can replay the clip." : "Play the clip to unlock the choices."}</p>
+    <p className="note">{heard ? "Pick the closest word. You can replay the clip." : "Listen to the clip before choosing a word."}</p>
     <form onSubmit={(event) => {
       event.preventDefault();
       if (heard && answer) onAnswer(answer);

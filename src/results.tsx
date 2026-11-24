@@ -75,7 +75,7 @@ export function Results({ result, topic }: { result?: PilotResult | ExperimentRe
   return (
     <section className="results">
       <div className="result-heading">
-        {pilot ? <div><p className="eyebrow">Pilot results</p><h1>Perception profile</h1></div>
+        {pilot ? <div><p className="eyebrow">Pilot results</p><h1>Pilot Results</h1></div>
           : <h1>{topic === "change" ? "Change Detection" : title} Results</h1>}
         {result
           ? <button className="button secondary" type="button" onClick={() => saveDownload(`perception-${pilot ? "pilot" : topic}-${result.session_id}.json`, result)}>Export session</button>

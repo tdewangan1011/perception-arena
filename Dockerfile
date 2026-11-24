@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM python:3.14-slim AS bundle
-ARG RELEASE_TAG=v2026.11.20
-ARG RELEASE_SHA256=6f0641378ed2f779d5f5e07740a703d6c64e5524653433e7c9ed3f6800229f6a
+ARG RELEASE_TAG=v2026.11.24
+ARG RELEASE_SHA256=eae3daf6925c8f44411d0b84274fae8e6279df540ad9d6af14db48e5015e5858
 COPY deploy/fetch-release.py /fetch-release.py
 RUN --mount=type=secret,id=github-token,required=true RELEASE_TAG="$RELEASE_TAG" RELEASE_SHA256="$RELEASE_SHA256" python /fetch-release.py
 

@@ -271,7 +271,7 @@ export default function BrainPathway({ mode }: { mode: PathwayMode }) {
       <div>
         <div ref={host} className="brain-canvas">
           {!loaded && !error && <p className="brain-status" role="status">Loading the cortical surface…</p>}
-          {error && <p className="brain-status" role="status">The 3D view is unavailable in this browser. Explore the pathway using the steps alongside it.</p>}
+          {error && <p className="brain-status" role="status">The 3D view is unavailable in this browser. Read through the pathway steps alongside it.</p>}
           <div className="brain-node-label" ref={markerLabel} hidden={error}>{data.steps[stage].name}</div>
         </div>
         <div className="brain-toolbar">

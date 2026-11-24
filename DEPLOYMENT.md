@@ -6,7 +6,7 @@ Prepare the Mixed Visual Challenge bank with `python -m backend.prepare_mixed` b
 
 ## Prepare the release
 
-From the checkout, after running the model preparation commands in README.md:
+From the checkout, after running the model preparation commands in the [technical guide](docs/TECHNICAL_GUIDE.md):
 
 ```powershell
 npm ci
@@ -36,7 +36,7 @@ Check `http://127.0.0.1:8000/api/ready` and load the home page. The container li
 
 ### Render deployment from this private repository
 
-The root `Dockerfile` downloads the checksum-pinned `v2026.11.20` GitHub release bundle. It does not attempt model inference during deployment. This is separate from `Dockerfile.release`, which builds an already extracted archive.
+The root `Dockerfile` downloads the checksum-pinned `v2026.11.24` GitHub release bundle. It does not attempt model inference during deployment. This is separate from `Dockerfile.release`, which builds an already extracted archive.
 
 1. Create an account at https://dashboard.render.com and connect GitHub. Grant access to `tdewangan1011/perception-arena`.
 2. In GitHub, open Settings → Developer settings → Personal access tokens → Fine-grained tokens. Create a token limited to this repository with **Contents: Read-only** permission. Set an expiration that covers deployment/rebuilds. Do not put it into Git or chat.

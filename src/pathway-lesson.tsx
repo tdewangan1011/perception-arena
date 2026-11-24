@@ -8,7 +8,7 @@ export function PathwayLesson({ mode, both = false }: { mode: PathwayMode; both?
   const [selected, setSelected] = useState(mode);
 
   return <details className="pathway-lesson" onToggle={(event) => setOpen(event.currentTarget.open)}>
-    <summary>{both ? "Explore the sensory pathways in 3D" : mode === "visual" ? "Explore the visual pathway in 3D" : "Explore the auditory pathway in 3D"}</summary>
+    <summary>{both ? "Sensory pathways in 3D" : mode === "visual" ? "Visual pathway in 3D" : "Auditory pathway in 3D"}</summary>
     {open && <>
       {both && <div className="pathway-mode-buttons" role="group" aria-label="Sensory pathway">
         {(["visual", "auditory"] as const).map((pathway) => <button type="button" className="button secondary"

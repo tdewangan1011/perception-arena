@@ -180,7 +180,7 @@ export function MixedChallenge({ onComplete }: { onComplete: (result: MixedResul
   return <section className="results">
     <a className="back-link" href="#trial/visual">← Visual challenges</a>
     <h1>Mixed Visual Challenge</h1>
-    <p className="lede">A 32-trial tour of eight visual topics. Recognition and color matching adjust to your answers, while the other topics provide fixed comparison trials.</p>
+    <p className="lede">Answer 32 questions across eight visual topics. Occlusion, blur, lighting, and color adjust in difficulty as you play. The other four topics use fixed questions.</p>
     <ul className="mixed-rules">
       <li>Each topic appears four times. Every source image or question appears once within the round.</li>
       <li>Adaptive topics start at difficulty 2 of 5. A correct answer moves up one level; a miss moves down one.</li>

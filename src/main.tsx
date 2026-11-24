@@ -112,16 +112,16 @@ function Overview() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="accent-line" /> A perception game</p>
-          <h1>Explore how we perceive.</h1>
-          <p className="lede">Recognize objects in altered images and pick out words through background noise. See where your answers and the models’ diverge.</p>
+          <p className="eyebrow">A perception game</p>
+          <h1>Put your senses to the test.</h1>
+          <p className="lede">Identify objects, spot changes, and listen for words in noise. Compare your answers with the models after each round.</p>
           <div className="actions">
             <a className="button primary" href="#trial">Start challenge <span aria-hidden="true">→</span></a>
-            <a className="button secondary" href="#results">Preview results</a>
+            <a className="button secondary" href="#results">View results</a>
           </div>
         </div>
         <figure className="hero-figure">
-          <div className="figure-top"><span><i /> Stimulus preview</span><span>Occlusion</span></div>
+          <div className="figure-top"><span>Example image</span><span>Occlusion</span></div>
           <Stimulus imageUrl={previewTrial.imageUrl} />
           <figcaption><span>Illustrative image</span><span>Four possible answers</span></figcaption>
         </figure>
@@ -132,15 +132,15 @@ function Overview() {
           <a className="challenge-card" href="#trial/visual">
             <div className="challenge-copy">
               <h3>Visual challenges</h3>
-              <p>Recognize objects with less detail, judge depth, and explore how context affects what you see.</p>
-              <span className="challenge-action">Explore visual challenges <span aria-hidden="true">→</span></span>
+              <p>Identify blurred objects, judge depth, match colors, and spot changes in photographs.</p>
+              <span className="challenge-action">Choose a visual challenge <span aria-hidden="true">→</span></span>
             </div>
           </a>
           <a className="challenge-card" href="#trial/auditory">
             <div className="challenge-copy">
               <h3>Auditory challenges</h3>
               <p>Pick out words through background noise, compare tones, and listen for a missing fundamental.</p>
-              <span className="challenge-action">Explore auditory challenges <span aria-hidden="true">→</span></span>
+              <span className="challenge-action">Choose an auditory challenge <span aria-hidden="true">→</span></span>
             </div>
           </a>
         </div>
@@ -344,7 +344,7 @@ function ChallengePicker({ model, auditory }: { model: ModelStatus; auditory: bo
         <a className="challenge-card mixed-challenge-card" href="#trial/mixed">
           <div className="challenge-copy">
             <h2>Mixed Visual Challenge</h2>
-            <p>Play across eight visual topics with adaptive recognition and color trials.</p>
+            <p>Try all eight visual topics. Difficulty adjusts for occlusion, blur, lighting, and color.</p>
             <span className="challenge-action">32 trials · Human–AI comparison score <span aria-hidden="true">→</span></span>
           </div>
         </a>
@@ -681,7 +681,7 @@ function App() {
             : <Results result={profiles[selectedView]} topic={selectedView === "pilot" ? "occlusion" : selectedView} />}
         </>}
       </main>
-      <footer><span>Sensation &amp; Perception · Course project</span><a href="./about-data.html">Data &amp; credits</a></footer>
+      <footer><span>Perception Arena</span><a href="./about-data.html">Data &amp; credits</a></footer>
     </>
   );
 }
